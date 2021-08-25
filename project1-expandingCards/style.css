@@ -1,0 +1,64 @@
+/*
+============
+variables
+============
+*/
+:root {
+  --clr-primary-duskYellow: hsl(60, 88%, 73%);
+  --clr-primary-duskBlack: hsl(0, 8%, 15%);
+  --ff-primary: monospace;
+  --fs-h1: 2rem;
+  --padding-body: 1em 2em;
+  --padding-h1: 0.5em;
+  --transition: 0.3s linear;
+}
+
+/*
+============
+general styles
+============
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  padding: var(--padding-body);
+}
+
+h1 {
+  font-family: var(--ff-primary);
+  font-size: var(--fs-h1);
+  padding: var(--padding-h1);
+}
+
+section {
+  width: 10%;
+  border-radius: 50%;
+}
+
+section + section {
+  margin-left: 1em;
+}
+
+/*
+============
+section styles
+============
+*/
+
+/*
+============
+
+============
+*/
+
+/*
+============
+
+============
+*/
