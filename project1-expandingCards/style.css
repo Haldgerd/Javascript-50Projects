@@ -10,7 +10,7 @@ variables
   --fs-h1: 1rem;
   --padding-body: 1em 2em;
   --padding-h1: 0.5em;
-  --transition: 0.3s linear;
+  --transition: 0.5s linear;
 }
 
 /*
@@ -40,7 +40,7 @@ body {
 }
 
 main {
-  width: 70%;
+  width: 90%;
   justify-content: center;
 }
 
@@ -52,8 +52,8 @@ h1 {
   color: var(--clr-primary-duskYellow);
   position: absolute;
   z-index: 5;
-  bottom: 10px;
-  left: 10px;
+  bottom: 20px;
+  left: 20px;
   opacity: 0;
   transition: var(--transition);
 }
@@ -65,21 +65,37 @@ h1 {
 
 section {
   width: 5rem;
-  height: 50vh;
+  height: 70vh;
   position: relative;
   transition: var(--transition);
   border-radius: 50px;
-  flex: 1;
+  background-size: cover;
 }
 
 .section--expand {
-  width: 50%;
+  width: 100%;
   transition: var(--transition);
 }
 
 section + section {
   margin-left: 1em;
 }
+
+/* css version of finished project functionallity*/
+/* section:hover {
+  width: 100%;
+  transition: var(--transition);
+}
+
+section:hover h1 {
+  opacity: 1;
+} */
+
+/*
+=================
+cards section - images
+=================
+*/
 
 .cardOne {
   background-image: url("./images/image1.jpg");
@@ -116,28 +132,3 @@ section + section {
   background-repeat: no-repeat;
   background-position: left;
 }
-
-img {
-  width: 100%;
-  height: 100%;
-  background-position: top center;
-  border-radius: 50px;
-}
-
-/*
-============
-section styles
-============
-*/
-
-/*
-============
-
-============
-*/
-
-/*
-============
-
-============
-*/
