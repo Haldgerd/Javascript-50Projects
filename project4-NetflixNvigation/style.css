@@ -1,0 +1,132 @@
+@import url("https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap");
+
+/*
+================
+variables
+================
+*/
+:root {
+  --clr-primary-red: hsl(0, 94%, 33%);
+  --clr-primary-dirtyWhite: hsl(0, 75%, 97%);
+  --clr-primary-black: hsl(0, 4%, 5%);
+  --fs-h1: 3rem;
+  --fs-h2: 2.5rem;
+  --fs-icons: 1.75rem;
+  --ff-primary: "Share Tech Mono", monospace;
+  --padding-h2: 1em 1em 0;
+  --transition: 0.5s ease-out;
+}
+
+/*
+================
+general styles
+================
+*/
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--ff-primary);
+  color: var(--clr-primary-black);
+}
+
+main {
+  min-height: 100vh;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-size: var(--fs-h1);
+}
+
+h2 {
+  font-size: var(--fs-h2);
+  margin-top: 80px;
+}
+
+i {
+  font-size: var(--fs-icons);
+}
+
+a {
+  text-decoration: none;
+  color: var(--clr-primary-black);
+  text-transform: capitalize;
+}
+
+a + a {
+  padding-top: 0.75em;
+}
+
+p {
+  text-transform: uppercase;
+}
+
+/*
+================
+navigation icon styles
+================
+*/
+.hamburger__menu {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  transition: var(--transition);
+}
+
+.hamburger__menu:hover {
+  color: var(--clr-primary-red);
+  transition: var(--transition);
+}
+
+.hamburger__menu--close {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+}
+
+/*
+================
+navigation section styles
+================
+*/
+.navigation__section {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 1.3em;
+  /* visibility: hidden; */
+  background-color: var(--clr-primary-dirtyWhite);
+  min-height: 100vh;
+  transform: translateX(-100%);
+  transition: var(--transition);
+}
+
+.navigation__links {
+  display: flex;
+  flex-flow: column;
+  padding-left: 2em;
+  margin-top: 2em;
+}
+
+.navigation__section--red {
+  background-color: var(--clr-primary-red);
+}
+
+.navigation__section--black {
+  background-color: var(--clr-primary-black);
+}
+
+/*!!!! class to be added upon clicking hamburger menu button*/
+.navigation__section--active {
+  transform: translateX(0);
+  transition: var(--transition);
+}
