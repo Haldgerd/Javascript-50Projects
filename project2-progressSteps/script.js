@@ -4,14 +4,9 @@ const buttons = document.querySelectorAll("button");
 const circles = document.querySelectorAll(".step__circle");
 const progressLine = document.querySelector(".steps__line");
 
-prevBtn.classList.add("btn--disabled");
-console.log(circles);
 let index = 0;
-let expandWidth = 33;
 
-
-
-
+prevBtn.classList.add("btn--disabled");
 
 /* add event listeners to buttons*/
 buttons.forEach(button => {
@@ -22,14 +17,16 @@ buttons.forEach(button => {
       if (index < circles.length - 1) {
       circles[index + 1].classList.add("circle__add--outline");
       index++;
+      progressLine.style.width += 33 + "%";
 
       if (index === circles.length - 1) {
-        nextBtn.classList.add("btn--disabled");
-        nextBtn.setAttribute("disabled", true);
+        currentBtn.classList.add("btn--disabled");
+        currentBtn.setAttribute("disabled", true);
       } 
     }
+    
     //remove disabled from prev button when next button is clicked.
-    prevBtn.removeAttribute("disabled");
+    prevBtn.disabled = false;
     prevBtn.classList.remove("btn--disabled");
   } else { // if button clicked is prev button take away the progress bar by one.
     if (index > 0) {
@@ -37,14 +34,14 @@ buttons.forEach(button => {
       index--;
 
       if (index === 0) {
-        prevBtn.classList.add("btn--disabled");
-        prevBtn.setAttribute("disabled", true);
+        currentBtn.classList.add("btn--disabled");
+        currentBtn.setAttribute("disabled", true);
+        progressLine.style.width = 0;
       } 
     }
-    nextBtn.removeAttribute("disabled");
+    nextBtn.disabled = false;
     nextBtn.classList.remove("btn--disabled");
   }
-
   });
 });
 
