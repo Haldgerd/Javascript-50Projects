@@ -1,0 +1,110 @@
+/*
+==============
+variables
+==============
+*/
+:root {
+  --clr-primary-yellow: hsl(49, 90%, 49%);
+  --clr-primary-duskBlack: hsl(0, 5%, 21%);
+  --clr-primary-dirtyWhite: hsl(0, 9%, 89%);
+  --ff-primary: monospace;
+  --fs-btn: 2rem;
+  --fs-text: 1rem;
+  --transition: 0.5s linear;
+  --padding-btn: 0.3em 1em;
+  --padding-main: 1em 1.5em;
+}
+
+/*
+==============
+general
+==============
+*/
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+main,
+.steps__bar,
+.steps__btns,
+.step__circle,
+.steps__container {
+  display: flex;
+}
+
+body {
+  font-family: var(--ff-primary);
+  font-size: var(--fs-text);
+}
+
+button {
+  font-family: var(--ff-primary);
+  font-size: var(--fs-text);
+  padding: var(--padding-btn);
+  text-transform: uppercase;
+  border: none;
+  background-color: var(--clr-primary-yellow);
+}
+
+button + button {
+  margin-left: 0.75em;
+}
+
+main {
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/*
+==============
+progress bars section
+==============
+*/
+
+.steps__container {
+  flex-flow: column;
+  align-items: center;
+}
+
+.steps__bar {
+  margin-bottom: 2em;
+}
+
+.step__circle {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: var(--clr-primary-dirtyWhite);
+  outline: 2px solid var(--clr-primary-duskBlack);
+  justify-content: center;
+  align-items: center;
+  transition: var(--transition);
+}
+
+.circle1 {
+  outline: 3px solid var(--clr-primary-yellow);
+}
+
+.circle__add--outline {
+  outline: 3px solid var(--clr-primary-yellow);
+  transition: var(--transition);
+}
+
+.step__line {
+  height: 5px;
+  width: 90px;
+  background-color: var(--clr-primary-dirtyWhite);
+  align-self: center;
+  margin-left: 3px;
+}
+
+/*
+==============
+buttons section
+==============
+*/
