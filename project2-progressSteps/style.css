@@ -5,7 +5,7 @@ variables
 */
 :root {
   --clr-primary-yellow: hsl(49, 90%, 49%);
-  --clr-primary-duskBlack: hsl(0, 5%, 21%);
+  --clr-primary-duskBlack: hsl(0, 2%, 34%);
   --clr-primary-dirtyWhite: hsl(0, 9%, 89%);
   --ff-primary: monospace;
   --fs-btn: 2rem;
@@ -39,6 +39,7 @@ main,
 body {
   font-family: var(--ff-primary);
   font-size: var(--fs-text);
+  color: var(--clr-primary-duskBlack);
 }
 
 button {
@@ -48,6 +49,7 @@ button {
   text-transform: uppercase;
   border: none;
   background-color: var(--clr-primary-yellow);
+  cursor: pointer;
 }
 
 button + button {
@@ -67,12 +69,16 @@ progress bars section
 */
 
 .steps__container {
+  width: 50%;
   flex-flow: column;
   align-items: center;
+  position: relative;
 }
 
 .steps__bar {
+  width: 100%;
   margin-bottom: 2em;
+  justify-content: space-between;
 }
 
 .step__circle {
@@ -86,21 +92,27 @@ progress bars section
   transition: var(--transition);
 }
 
-.circle1 {
-  outline: 3px solid var(--clr-primary-yellow);
-}
-
 .circle__add--outline {
   outline: 3px solid var(--clr-primary-yellow);
   transition: var(--transition);
 }
 
-.step__line {
-  height: 5px;
-  width: 90px;
-  background-color: var(--clr-primary-dirtyWhite);
-  align-self: center;
-  margin-left: 3px;
+.steps__line {
+  position: absolute;
+  width: 100%;
+  background-color: var(--clr-primary-duskBlack);
+  height: 2px;
+  z-index: -1;
+  align-self: center; /* used align self instead of transform translate y due to the fact that steps line is in fact a flex item.*/
+}
+
+.steps__line::before {
+  content: "";
+  background-color: var(--clr-primary-yellow);
+  height: 2px;
+  width: 0%;
+  z-index: -1;
+  position: absolute;
 }
 
 /*
@@ -108,3 +120,9 @@ progress bars section
 buttons section
 ==============
 */
+
+.btn--disabled {
+  cursor: not-allowed;
+  background-color: var(--clr-primary-dirtyWhite);
+  color: var(--clr-primary-duskBlack);
+}
