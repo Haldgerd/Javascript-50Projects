@@ -5,6 +5,12 @@ const circles = document.querySelectorAll(".step__circle");
 const progressLine = document.querySelector(".steps__line");
 
 let index = 0;
+let width = 33;
+
+
+function setProgressLine(index){
+  progressLine.style.width = (width * index) + "%";
+}
 
 prevBtn.classList.add("btn--disabled");
 
@@ -12,27 +18,26 @@ prevBtn.classList.add("btn--disabled");
 buttons.forEach(button => {
   button.addEventListener("click", (e) => {
     let currentBtn = e.currentTarget;
-  
     if (currentBtn.classList.contains("btn--next")) {
       if (index < circles.length - 1) {
       circles[index + 1].classList.add("circle__add--outline");
       index++;
-      progressLine.style.width += 33 + "%";
-
       if (index === circles.length - 1) {
         currentBtn.classList.add("btn--disabled");
         currentBtn.setAttribute("disabled", true);
       } 
     }
-    
     //remove disabled from prev button when next button is clicked.
     prevBtn.disabled = false;
     prevBtn.classList.remove("btn--disabled");
-  } else { // if button clicked is prev button take away the progress bar by one.
+
+    } else { // if button clicked is prev button take away the progress bar by one.
     if (index > 0) {
       circles[index].classList.remove("circle__add--outline");
-      index--;
+       index--;
 
+      progressLine.style.width = (width * index) + "%"; 
+    
       if (index === 0) {
         currentBtn.classList.add("btn--disabled");
         currentBtn.setAttribute("disabled", true);
@@ -41,7 +46,9 @@ buttons.forEach(button => {
     }
     nextBtn.disabled = false;
     nextBtn.classList.remove("btn--disabled");
-  }
+    }
+    // function to set progress line
+    setProgressLine(index);
+
   });
 });
-
