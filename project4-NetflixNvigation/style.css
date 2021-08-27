@@ -125,6 +125,7 @@ navigation section styles
   width: 95%;
 }
 
+/* animation delay is what makes each nav move at different time.*/
 .navigation__section--white.navigation__section--active {
   transition-delay: 0.4s;
 }
