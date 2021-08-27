@@ -7,14 +7,14 @@ variables
 */
 :root {
   --clr-primary-red: hsl(0, 94%, 33%);
-  --clr-primary-dirtyWhite: hsl(0, 75%, 97%);
+  --clr-primary-dirtyWhite: hsl(0, 26%, 95%);
   --clr-primary-black: hsl(0, 4%, 5%);
   --fs-h1: 3rem;
   --fs-h2: 2.5rem;
   --fs-icons: 1.75rem;
   --ff-primary: "Share Tech Mono", monospace;
   --padding-h2: 1em 1em 0;
-  --transition: 0.5s ease-out;
+  --transition: 0.5s ease-in-out;
 }
 
 /*
@@ -66,6 +66,11 @@ a + a {
   padding-top: 0.75em;
 }
 
+a:hover {
+  color: var(--clr-primary-red);
+  transform: scale(1.2);
+}
+
 p {
   text-transform: uppercase;
 }
@@ -91,6 +96,12 @@ navigation icon styles
   position: fixed;
   top: 20px;
   left: 20px;
+  transition: var(--transition);
+}
+
+.hamburger__menu--close:hover {
+  transform: rotate(270deg);
+  transition: var(--transition);
 }
 
 /*
@@ -98,16 +109,20 @@ navigation icon styles
 navigation section styles
 ================
 */
+
 .navigation__section {
   position: fixed;
   top: 0;
   left: 0;
-  padding: 1.3em;
-  /* visibility: hidden; */
-  background-color: var(--clr-primary-dirtyWhite);
+  padding: 2em;
   min-height: 100vh;
-  transform: translateX(-100%);
   transition: var(--transition);
+  /* visibility: hidden; */
+  transform: translateX(-100%);
+}
+
+.navigation__section--white {
+  background-color: var(--clr-primary-dirtyWhite);
 }
 
 .navigation__links {
