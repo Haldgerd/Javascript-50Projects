@@ -40,7 +40,8 @@ main {
   display: flex;
   flex-flow: column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
+  padding: 3em;
 }
 
 h1 {
@@ -93,7 +94,7 @@ navigation icon styles
 }
 
 .hamburger__menu--close {
-  position: fixed;
+  position: absolute;
   top: 20px;
   left: 20px;
   transition: var(--transition);
@@ -109,20 +110,43 @@ navigation icon styles
 navigation section styles
 ================
 */
-
 .navigation__section {
   position: fixed;
   top: 0;
   left: 0;
   padding: 2em;
   min-height: 100vh;
-  transition: var(--transition);
-  /* visibility: hidden; */
+  transition: transform var(--transition);
   transform: translateX(-100%);
 }
 
 .navigation__section--white {
   background-color: var(--clr-primary-dirtyWhite);
+  width: 95%;
+}
+
+.navigation__section--white.navigation__section--active {
+  transition-delay: 0.4s;
+}
+
+.navigation__section--red {
+  background-color: var(--clr-primary-red);
+  width: 95%;
+  transition-delay: 0.2s;
+}
+
+.navigation__section--red.navigation__section--active {
+  transition-delay: 0.2s;
+}
+
+.navigation__section--black {
+  background-color: var(--clr-primary-black);
+  width: clamp(320px, 60%, 480px);
+  transition-delay: 0.4s;
+}
+
+.navigation__section--black.navigation__section--active {
+  transition-delay: 0;
 }
 
 .navigation__links {
@@ -132,16 +156,8 @@ navigation section styles
   margin-top: 2em;
 }
 
-.navigation__section--red {
-  background-color: var(--clr-primary-red);
-}
-
-.navigation__section--black {
-  background-color: var(--clr-primary-black);
-}
-
 /*!!!! class to be added upon clicking hamburger menu button*/
 .navigation__section--active {
   transform: translateX(0);
-  transition: var(--transition);
+  transition: transform var(--transition);
 }
