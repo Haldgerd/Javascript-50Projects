@@ -1,0 +1,129 @@
+/*
+===============
+variables
+===============
+*/
+:root {
+  --clr-primary-opaqueBlue: hsla(240, 44%, 59%, 0.466);
+  --clr-primary-opaqueYellow: hsla(56, 79%, 64%, 0.418);
+  --clr-primary-yellow: hsl(51, 88%, 40%);
+  --clr-primary-blue: hsl(240, 51%, 30%);
+  --clr-primary-white: hsl(0, 5%, 88%);
+  --ff-primary: "Courgette", cursive;
+  --ff-secondary: "Montserrat", sans-serif;
+  --fs-h1: 2.75rem;
+  --fs-btn: 1.45rem;
+  --padding-btn: 0.75em 1.25em;
+  --padding-h1: 1em 0.5em;
+  --transition-btn: 0.3s linear;
+  --transition-section-hover: 0.5s ease-in-out;
+  --bg-image-one: url("./images/balurGate2.jpg");
+  --bg-image-two: url("./images/baldurGate3.jpg");
+}
+
+/*
+===============
+general styling
+===============
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--ff-secondary);
+  color: var(--clr-primary-white);
+}
+
+h1 {
+  font-size: var(--fs-h1);
+  padding: var(--padding-h1);
+}
+
+button {
+  text-transform: uppercase;
+  font-size: var(--fs-btn);
+  font-weight: bold;
+  border: 2px solid var(--clr-primary-white);
+  background-color: transparent;
+  color: var(--clr-primary-white);
+  align-self: center;
+  padding: var(--padding-btn);
+  width: 30%;
+  transition: var(--transition-btn);
+}
+
+main {
+  min-height: 100vh;
+  display: flex;
+}
+
+/*
+===============
+product container styling
+===============
+*/
+.product__container {
+  width: 50%;
+  height: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.product__one {
+  background-image: var(--bg-image-one);
+  background-position: left;
+}
+
+.product__two {
+  background-image: var(--bg-image-two);
+  background-position: right;
+}
+
+.product__one,
+.product__two {
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/*
+===============
+sections styling
+===============
+*/
+.product__section {
+  display: flex;
+}
+
+.section__left {
+  width: 100%;
+  height: 100%;
+  background-color: var(--clr-primary-opaqueYellow);
+}
+
+.section__right {
+  width: 100%;
+  height: 100%;
+  background-color: var(--clr-primary-opaqueBlue);
+}
+
+/*
+===============
+buttons styling
+===============
+*/
+
+.btn__left:hover {
+  background-color: var(--clr-primary-yellow);
+  transition: var(--transition-btn);
+}
+
+.btn__right:hover {
+  background-color: var(--clr-primary-blue);
+  transition: var(--transition-btn);
+}

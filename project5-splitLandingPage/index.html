@@ -13,23 +13,26 @@
 
     <!--google fonts-->
     <!-- @import fonts in css -->
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Courgette&family=Montserrat&display=swap");
+    </style>
 
     <title>Split landing page</title>
   </head>
   <body>
     <main class="products__container">
       <!-- product sections -->
-      <div class="product__container">
-        <section class="product__section">
+      <div class="product__container product__one">
+        <section class="product__section section__left">
           <!-- section will have an overlay - will be an overlay -->
           <h1 class="product__title">Baldur's gate II</h1>
-          <button class="product__btn">buy now</button>
+          <button class="product__btn btn__left">buy now</button>
         </section>
       </div>
-      <div class="product__container">
-        <section class="product__section">
+      <div class="product__container product__two">
+        <section class="product__section section__right">
           <h1 class="product__title">Baldur's gate III</h1>
-          <button class="product__btn">buy now</button>
+          <button class="product__btn btn__right">buy now</button>
         </section>
       </div>
     </main>
