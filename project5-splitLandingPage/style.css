@@ -92,20 +92,20 @@ product container styling
 
 /* class to add when hovered over certain section */
 .product__container--expand {
-  width: 65%;
+  width: 200%;
   transition: var(--transition-section-hover);
 }
 
-.product__container--shrink {
-  width: 35%;
+/* .product__container--shrink {
+  width: 25%;
   transition: var(--transition-section-hover);
-}
+} */
 
 /* only css partial solution*/
-.product__container:hover {
+/* .product__container:hover {
   width: 100%;
   transition: var(--transition-section-hover);
-}
+} */
 
 /*
 ===============
