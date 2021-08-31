@@ -1,0 +1,75 @@
+@import url("https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap");
+
+/*
+==============
+variables
+==============
+*/
+:root {
+  --clr-primary-cyberYellow: hsl(56, 86%, 46%);
+  --clr-primary-duskBlack: hsl(0, 12%, 10%);
+  --clr-primary-lightGrey: hsla(0, 0%, 70%, 0.678);
+  --ff-primary: "Share Tech Mono", monospace;
+  --fs-text: 2rem;
+  --fs-label: 1.25rem;
+  --padding-form: 0.5em;
+  --transition: 0.3s linear;
+}
+
+/*
+==============
+general
+==============
+*/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--clr-primary-cyberYellow);
+  font-family: var(--ff-primary);
+  color: var(--clr-primary-duskBlack);
+  font-size: var(--fs-text);
+}
+
+main {
+  min-height: inherit;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+}
+
+label {
+  align-self: flex-end;
+  font-size: var(--fs-label);
+}
+
+input {
+  margin-left: 1em;
+  width: 20%;
+  border: none;
+  padding: 0.5em;
+}
+
+/*
+==============
+form - input styles
+==============
+*/
+
+.text__speed__container {
+  width: 20%;
+  display: flex;
+  justify-content: center;
+  padding: var(--padding-form);
+  position: fixed;
+  bottom: 50px;
+  background-color: var(--clr-primary-lightGrey);
+}
