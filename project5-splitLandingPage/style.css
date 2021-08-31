@@ -4,17 +4,17 @@ variables
 ===============
 */
 :root {
-  --clr-primary-opaqueBlue: hsla(240, 44%, 59%, 0.466);
-  --clr-primary-opaqueYellow: hsla(56, 79%, 64%, 0.418);
+  --clr-primary-opaqueBlue: hsla(240, 78%, 35%, 0.466);
+  --clr-primary-opaqueGrey: hsla(60, 8%, 10%, 0.671);
   --clr-primary-yellow: hsl(51, 88%, 40%);
-  --clr-primary-blue: hsl(240, 51%, 30%);
+  --clr-primary-blue: hsl(240, 73%, 25%);
   --clr-primary-white: hsl(0, 5%, 88%);
-  --ff-primary: "Courgette", cursive;
-  --ff-secondary: "Montserrat", sans-serif;
-  --fs-h1: 2.75rem;
-  --fs-btn: 1.45rem;
+  --ff-primary: "Berkshire Swash", cursive;
+  --ff-secondary: "Lato", sans-serif;
+  --fs-h1: clamp(32px, 10vh, 80px);
+  --fs-btn: clamp(10px, 3vh, 1.45rem);
   --padding-btn: 0.75em 1.25em;
-  --padding-h1: 1em 0.5em;
+  --padding-h1: 0.5em;
   --transition-btn: 0.3s linear;
   --transition-section-hover: 0.5s ease-in-out;
   --bg-image-one: url("./images/balurGate2.jpg");
@@ -42,19 +42,21 @@ body {
 h1 {
   font-size: var(--fs-h1);
   padding: var(--padding-h1);
+  font-family: var(--ff-primary);
 }
 
 button {
   text-transform: uppercase;
   font-size: var(--fs-btn);
   font-weight: bold;
-  border: 2px solid var(--clr-primary-white);
+  border: 5px solid var(--clr-primary-white);
   background-color: transparent;
   color: var(--clr-primary-white);
   align-self: center;
   padding: var(--padding-btn);
   width: 30%;
   transition: var(--transition-btn);
+  font-family: var(--ff-secondary);
 }
 
 main {
@@ -69,26 +71,40 @@ product container styling
 */
 .product__container {
   width: 50%;
-  height: inherit;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  transition: var(--transition-section-hover);
 }
 
 .product__one {
   background-image: var(--bg-image-one);
-  background-position: left;
+  background-position: center;
 }
 
 .product__two {
   background-image: var(--bg-image-two);
-  background-position: right;
+  background-position: center;
 }
 
 .product__one,
 .product__two {
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+/* class to add when hovered over certain section */
+.product__container--expand {
+  width: 65%;
+  transition: var(--transition-section-hover);
+}
+
+.product__container--shrink {
+  width: 35%;
+  transition: var(--transition-section-hover);
+}
+
+/* only css partial solution*/
+.product__container:hover {
+  width: 100%;
+  transition: var(--transition-section-hover);
 }
 
 /*
@@ -98,12 +114,15 @@ sections styling
 */
 .product__section {
   display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .section__left {
   width: 100%;
   height: 100%;
-  background-color: var(--clr-primary-opaqueYellow);
+  background-color: var(--clr-primary-opaqueGrey);
 }
 
 .section__right {
