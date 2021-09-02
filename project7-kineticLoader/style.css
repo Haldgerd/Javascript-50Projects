@@ -14,7 +14,6 @@ variables
 general styles
 =============
 */
-
 *,
 *::before,
 *::after {
@@ -41,18 +40,52 @@ main {
 triangles styles
 ==============
 */
-
 .triangle {
   height: 0;
   width: 0; /* setting width and height procures rather cool shades effect, skewed shapes. Try changing width to 200px :) */
-  border-width: 0px 60px 60px 60px;
   border-style: solid;
-  border-color: transparent transparent var(--clr-primary-dirtyWhite)
-    transparent;
+  animation: rotateA 2s linear infinite 0.5s;
 }
 
 .triangle__one {
   border-width: 60px 60px 0px 60px;
   border-color: var(--clr-primary-dirtyWhite) transparent transparent
     transparent;
+  transform: translateX(-30px) translateY(-30px) rotate(90deg);
+}
+
+.triangle__two {
+  border-width: 0px 60px 60px 60px;
+  border-color: transparent transparent var(--clr-primary-dirtyWhite)
+    transparent;
+  animation: rotateB 2s linear infinite;
+}
+
+/* maybe we should use before and after pseudo selectors??  why is there a difference*/
+@keyframes rotateA {
+  0%,
+  25% {
+    transform: rotate(0);
+  }
+  50%,
+  75% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotateB {
+  0%,
+  25% {
+    transform: rotate(90deg);
+  }
+  50%,
+  75% {
+    transform: rotate(270deg);
+  }
+  100% {
+    transform: rotate(460deg);
+  }
 }
