@@ -14,7 +14,7 @@ function writeText() {
   if(counter > text.length) {
     counter = 1;
   }
-
+  // recursion, function calling itself.
   setTimeout(writeText, speed);
 }
 

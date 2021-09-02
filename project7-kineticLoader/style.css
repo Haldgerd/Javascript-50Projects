@@ -1,0 +1,58 @@
+/*
+=============
+variables
+=============
+*/
+:root {
+  --clr-primary-duskBlack: hsl(0, 4%, 14%);
+  --clr-primary-dirtyWhite: hsl(0, 15%, 94%);
+  --padding-main: 2em;
+}
+
+/*
+=============
+general styles
+=============
+*/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--clr-primary-duskBlack);
+}
+
+main {
+  height: 100vh;
+  padding: var(--padding-main);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+}
+
+/*
+==============
+triangles styles
+==============
+*/
+
+.triangle {
+  height: 0;
+  width: 0; /* setting width and height procures rather cool shades effect, skewed shapes. Try changing width to 200px :) */
+  border-width: 0px 60px 60px 60px;
+  border-style: solid;
+  border-color: transparent transparent var(--clr-primary-dirtyWhite)
+    transparent;
+}
+
+.triangle__one {
+  border-width: 60px 60px 0px 60px;
+  border-color: var(--clr-primary-dirtyWhite) transparent transparent
+    transparent;
+}
