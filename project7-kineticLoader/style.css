@@ -40,25 +40,36 @@ main {
 triangles styles
 ==============
 */
+
+.triangle__container {
+  position: relative;
+  width: 100px;
+  height: 100px;
+}
+
 .triangle {
   height: 0;
   width: 0; /* setting width and height procures rather cool shades effect, skewed shapes. Try changing width to 200px :) */
   border-style: solid;
-  animation: rotateA 2s linear infinite 0.5s;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .triangle__one {
   border-width: 60px 60px 0px 60px;
   border-color: var(--clr-primary-dirtyWhite) transparent transparent
     transparent;
-  transform: translateX(-30px) translateY(-30px) rotate(90deg);
+  animation: rotateB 2s linear infinite 0.5s;
+  transform: center top translateX(0px) translateY(0px) rotate(90deg);
 }
 
 .triangle__two {
   border-width: 0px 60px 60px 60px;
   border-color: transparent transparent var(--clr-primary-dirtyWhite)
     transparent;
-  animation: rotateB 2s linear infinite;
+  animation: rotateA 2s linear infinite;
+  transform: center bottom translateY(200%);
 }
 
 /* maybe we should use before and after pseudo selectors??  why is there a difference*/
@@ -79,13 +90,13 @@ triangles styles
 @keyframes rotateB {
   0%,
   25% {
-    transform: rotate(90deg);
+    transform: translateX(30px) translateY(30px) rotate(90deg);
   }
   50%,
   75% {
-    transform: rotate(270deg);
+    transform: translateX(-30px) translateY(30px) rotate(270deg);
   }
   100% {
-    transform: rotate(460deg);
+    transform: translateX(0px) translateY(0px) rotate(460deg);
   }
 }
