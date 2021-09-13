@@ -13,9 +13,51 @@ variables
 */
 
 :root {
-  --clr-primary-duskBlack: hsl(250, 13%, 9%);
+  --clr-primary-duskBlack: hsl(248, 10%, 16%);
   --clr-primary-dawnYellow: hsl(51, 100%, 55%);
   --clr-primary-dirtyWhite: hsl(0, 1%, 83%);
   --ff-primary: "ngc_292_halftoneregular", monospace;
-  --fs-main: 3rem;
+  --fs-main: 5rem;
+}
+
+/*
+=================
+general
+=================
+*/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  color: var(--clr-primary-dirtyWhite);
+  font-size: var(--fs-main);
+  font-family: var(--ff-primary);
+}
+
+main {
+  background-color: var(--clr-primary-duskBlack);
+  min-height: 100vh;
+  display: flex;
+}
+
+/*
+===============
+loading container
+===============
+*/
+.loading__container {
+  background-color: var(--clr-primary-dawnYellow);
+  width: 50%; /* width will become 0% while loading */
+}
+
+.loading__percentage {
+  margin: auto 0 auto 0.5em;
+  width: 50%;
+  opacity: 1; /* opacity will be 0 at width 100% */
 }
