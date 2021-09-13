@@ -1,0 +1,21 @@
+@font-face {
+  font-family: "ngc_292_halftoneregular";
+  src: url("./fonts/ngc292halftone-d95mx-webfont.woff2") format("woff2"),
+    url("./fonts/ngc292halftone-d95mx-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/*
+=================
+variables
+=================
+*/
+
+:root {
+  --clr-primary-duskBlack: hsl(250, 13%, 9%);
+  --clr-primary-dawnYellow: hsl(51, 100%, 55%);
+  --clr-primary-dirtyWhite: hsl(0, 1%, 83%);
+  --ff-primary: "ngc_292_halftoneregular", monospace;
+  --fs-main: 3rem;
+}
