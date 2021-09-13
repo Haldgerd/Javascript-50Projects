@@ -1,0 +1,54 @@
+/*
+===========
+variables
+===========
+*/
+
+:root {
+  --clr-primary-electricYellow: hsl(54, 86%, 51%);
+  --clr-primary-vintageGrey: hsl(270, 26%, 11%);
+  --ff-primary: monospace;
+  --fs-main: 1.5rem;
+  --padding-container: 1.5em;
+  --padding-main: 2em;
+  --container-transition: 0.3s ease-in-out;
+}
+
+/*
+==========
+general
+==========
+*/
+
+body {
+  font-size: var(--fs-main);
+  font-family: var(--ff-primary);
+  background-color: var(--clr-primary-vintageGrey);
+}
+
+main {
+  min-height: 100vh;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  padding: var(--padding-main);
+}
+
+/*
+================
+containers style
+================
+*/
+
+.container {
+  background-color: var(--clr-primary-electricYellow);
+  padding: var(--padding-container);
+  min-width: 25%;
+  max-width: 50%;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.container + .container {
+  margin-top: 1em;
+}
