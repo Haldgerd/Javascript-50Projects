@@ -11,7 +11,7 @@ variables
   --fs-main: 1.5rem;
   --padding-container: 1.5em;
   --padding-main: 2em;
-  --container-transition: 0.3s ease-in-out;
+  --container-transition: 0.4s ease-in-out;
 }
 
 /*
@@ -32,6 +32,7 @@ main {
   flex-flow: column;
   align-items: center;
   padding: var(--padding-main);
+  /* overflow-x: hidden;*/
 }
 
 /*
@@ -45,10 +46,23 @@ containers style
   padding: var(--padding-container);
   min-width: 25%;
   max-width: 50%;
+  height: 150px;
   text-align: center;
   text-transform: uppercase;
+  transform: translateX(300%);
+  transition: var(--container-transition);
+  margin-top: 1em;
 }
 
-.container + .container {
-  margin-top: 1em;
+.container:nth-of-type(even) {
+  transform: translateX(-300%);
+}
+
+.show {
+  transform: translateX(0%);
+}
+
+.container:nth-of-type(even).show {
+  /* target saperately beacuse it doesn't work otherwise*/
+  transform: translateX(0%);
 }
