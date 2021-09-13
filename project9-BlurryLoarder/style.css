@@ -53,13 +53,13 @@ loading container
 */
 .loading__container {
   background-color: var(--clr-primary-dawnYellow);
-  width: 50%; /* width will become 0% while loading */
   /* animation: fade 2s linear; */
+  width: 50%;
 }
 
 .loading__percentage {
   margin: auto 0 auto 0.5em;
-  opacity: 1; /* opacity will be 0 at width 100% */
+  /* opacity will be 0 at width 100% */
 }
 
 /* @keyframes fade {
