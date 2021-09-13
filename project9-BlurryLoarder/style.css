@@ -54,10 +54,19 @@ loading container
 .loading__container {
   background-color: var(--clr-primary-dawnYellow);
   width: 50%; /* width will become 0% while loading */
+  /* animation: fade 2s linear; */
 }
 
 .loading__percentage {
   margin: auto 0 auto 0.5em;
-  width: 50%;
   opacity: 1; /* opacity will be 0 at width 100% */
 }
+
+/* @keyframes fade {
+  0% {
+    width: 50%;
+  }
+  100% {
+    width: 0%;
+  }
+} */
