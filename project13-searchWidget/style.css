@@ -1,0 +1,82 @@
+/*
+=============
+variables
+=============
+*/
+
+:root {
+  --clr-primary-fadedPurple: hsl(300, 49%, 12%);
+  --clr-primary-dirtyWhite: hsl(0, 23%, 91%);
+  --clr-primary-smokeyYellow: hsl(51, 100%, 55%);
+  --padding-btn: 0.5em;
+  --padding-searchContainer: 0.5em;
+  --transition: 0.5s ease;
+  --ff-primary: monospace;
+  --fs-primary: 1rem;
+  --fs-icon: 1.5rem;
+}
+
+/*
+============
+general
+============
+*/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--clr-primary-fadedPurple);
+  font-family: var(--ff-primary);
+  font-size: var(--fs-primary);
+}
+
+main {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+i {
+  color: var(--clr-primary-fadedPurple);
+  font-size: var(--fs-icon);
+}
+
+input,
+button {
+  border: none;
+  background-color: var(--clr-primary-dirtyWhite);
+  height: 4vh;
+  padding: var(--padding-btn);
+}
+
+button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+input {
+  width: 0;
+  padding: 0;
+  /* 
+  transitions dont' work on display: none*/
+  transition: var(--transition);
+}
+
+.display {
+  padding: var(--padding-btn);
+  transition: var(--transition);
+  width: 200px;
+}
+
+input:focus {
+  outline: none;
+}
