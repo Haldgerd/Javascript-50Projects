@@ -4,6 +4,7 @@ const lines = document.querySelectorAll(".line");
 
 btn.addEventListener("click", ()=> {
   navigation.classList.toggle("active");
+  
   lines.forEach(line => line.classList.toggle("rotate"))
 
 });
