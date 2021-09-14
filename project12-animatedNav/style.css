@@ -10,11 +10,11 @@ variables
   --clr-primary-deepPurple: hsl(300, 42%, 14%);
   --clr-primary-smokeyYellow: hsl(56, 88%, 51%);
   --ff-primary: monospace;
-  --fs-primary: 1rem;
+  --fs-primary: clamp(0.8rem, 1.6vh, 1rem);
   --fs-icon: 1.5rem;
-  --padding-nav: 0.8em 1em;
+  --padding-nav: 1em;
   --padding-btn: 0.5em;
-  --transition: 0.3s ease;
+  --transition: 0.6s ease;
 }
 
 /*
@@ -35,46 +35,49 @@ body {
   font-family: var(--ff-primary);
   font-size: var(--fs-primary);
   color: var(--clr-primary-duskBlack);
+  background-image: linear-gradient(
+    to bottom,
+    var(--clr-primary-deepPurple) 0%,
+    var(--clr-primary-deepPurple) 50%,
+    var(--clr-primary-smokeyYellow) 50%,
+    var(--clr-primary-smokeyYellow) 100%
+  );
 }
 
 button {
   border: none;
   background-color: var(--clr-primary-dirtyWhite);
+  width: 50px;
+  height: 45px;
+  padding: var(--padding-nav);
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  min-width: 100vw;
 }
 
 li {
   list-style: none;
+  transform: rotateY(0deg);
+  opacity: 0;
+  transition: var(--transition);
+  text-transform: uppercase;
+}
+
+li:hover {
+  color: var(--clr-primary-deepPurple);
+  font-weight: bold;
 }
 
 li + li {
   margin-left: 1em;
-}
-
-i {
-  font-size: var(--fs-icon);
-}
-
-nav {
-  display: flex;
-}
-
-/* 
-============
-design container styles
-============
-*/
-
-.design__container--purple,
-.design__container--yellow {
-  height: 50vh;
-}
-
-.design__container--purple {
-  background-color: var(--clr-primary-deepPurple);
-}
-
-.design__container--yellow {
-  background-color: var(--clr-primary-smokeyYellow);
 }
 
 /* 
@@ -83,22 +86,68 @@ nav container styles
 ============
 */
 
-.nav__container {
+.main__nav__container {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  top: 0;
-  left: 0;
-  min-height: 100vh;
-  min-width: 100vw;
 }
 
-.nav__container--inner {
-  padding: var(--padding-nav);
-  background-color: var(--clr-primary-dirtyWhite);
-  width: 35%;
+.nav__container {
+  width: 0;
+  height: 45px;
+  padding: 1em 0; /* TRICK: remove only padding left and right*/
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  background-color: var(--clr-primary-dirtyWhite);
+
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+/* when nav container is ACTIVE rulesets*/
+
+.nav__container.active {
+  padding: var(--padding-nav);
+  width: clamp(250px, 20vw, 400px);
+  transition: var(--transition);
+}
+
+.nav__container.active li {
+  opacity: 1;
+  transform: rotateY(360deg);
+  transition: var(--transition);
+}
+
+/*
+==========
+x button icons styling
+==========
+*/
+.line {
+  background-color: var(--clr-primary-deepPurple);
+  height: 2px;
+  width: 20px;
+  top: 15px;
+  left: 30%;
+  position: absolute;
+  transition: var(--transition);
+}
+
+.line--top {
+  top: auto;
+  bottom: 15px;
+  /* background-color: blue; */
+}
+
+/* when lines are ACTIVE rulesets*/
+
+.line.rotate {
+  bottom: 20px;
+}
+
+.line--top.rotate {
+  transform: rotate(-765deg) translateY(-1.5px);
+}
+
+.line--bottom.rotate {
+  /* background-color: red; */
+  transform: rotate(765deg) translateX(4px) translateY(5.5px);
 }
