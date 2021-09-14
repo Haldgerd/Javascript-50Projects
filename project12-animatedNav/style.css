@@ -1,0 +1,104 @@
+/*
+============
+variables
+============
+*/
+
+:root {
+  --clr-primary-dirtyWhite: hsl(0, 6%, 87%);
+  --clr-primary-duskBlack: hsl(0, 5%, 12%);
+  --clr-primary-deepPurple: hsl(300, 42%, 14%);
+  --clr-primary-smokeyYellow: hsl(56, 88%, 51%);
+  --ff-primary: monospace;
+  --fs-primary: 1rem;
+  --fs-icon: 1.5rem;
+  --padding-nav: 0.8em 1em;
+  --padding-btn: 0.5em;
+  --transition: 0.3s ease;
+}
+
+/*
+===========
+general styling 
+===========
+*/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--ff-primary);
+  font-size: var(--fs-primary);
+  color: var(--clr-primary-duskBlack);
+}
+
+button {
+  border: none;
+  background-color: var(--clr-primary-dirtyWhite);
+}
+
+li {
+  list-style: none;
+}
+
+li + li {
+  margin-left: 1em;
+}
+
+i {
+  font-size: var(--fs-icon);
+}
+
+nav {
+  display: flex;
+}
+
+/* 
+============
+design container styles
+============
+*/
+
+.design__container--purple,
+.design__container--yellow {
+  height: 50vh;
+}
+
+.design__container--purple {
+  background-color: var(--clr-primary-deepPurple);
+}
+
+.design__container--yellow {
+  background-color: var(--clr-primary-smokeyYellow);
+}
+
+/* 
+============
+nav container styles
+============
+*/
+
+.nav__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-height: 100vh;
+  min-width: 100vw;
+}
+
+.nav__container--inner {
+  padding: var(--padding-nav);
+  background-color: var(--clr-primary-dirtyWhite);
+  width: 35%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
