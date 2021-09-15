@@ -1,5 +1,6 @@
 const btns = document.querySelectorAll(".btn--large");
 
+
 btns.forEach(btn => {
   btn.addEventListener("click", (e) => {
     // calculate where in viewport we click
@@ -10,17 +11,13 @@ btns.forEach(btn => {
     const btnPositionTop = btn.offsetTop;
     const btnPositionLeft = btn.offsetLeft;
 
-    // console.log(btnPositionTop);
-    // console.log(viewportPositionTop - btnPositionTop);
-
     let clickPosition = getPosition(viewportPositionTop, viewportPositionLeft, btnPositionTop, btnPositionLeft); //function returns array [top-y position, left-x position]
-
-    //console.log(clickPosition);
-    let test = createCircleEffect(clickPosition[0], clickPosition[1]);
-    //console.log(test);
-    
+    let circle = createCircleEffect(clickPosition[0], clickPosition[1]);
+  
     //append circle effect to btn.
-    e.target.appendChild(test);
+    e.target.appendChild(circle);
+    // remove element
+    setTimeout(() => circle.remove(), 500);
   });
 });
 
