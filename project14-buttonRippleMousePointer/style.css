@@ -1,0 +1,79 @@
+/*
+===========
+variables
+===========
+*/
+
+:root {
+  --clr-primary-smokeyYellow: hsl(51, 100%, 50%);
+  --clr-primary-darkPurple: hsl(300, 37%, 12%);
+  --clr-primary-white: white;
+  --ff-primary: monospace;
+  --fs-primary: 1.2rem;
+  --transition: 0.5s ease;
+  --padding-btn: 0.85em 1.75em;
+}
+
+/*
+=============
+general
+=============
+*/
+
+body {
+  background-color: var(--clr-primary-smokeyYellow);
+  color: var(--clr-primary-white);
+  font-family: var(--ff-primary);
+}
+
+button {
+  border: none;
+  width: clamp(200px, 35%, 500px);
+  background-color: var(--clr-primary-darkPurple);
+  color: var(--clr-primary-white);
+  padding: var(--padding-btn);
+  font-size: var(--fs-primary);
+  font-family: inherit;
+  text-transform: uppercase;
+  position: relative;
+  overflow: hidden;
+}
+
+main {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 
+===========
+btn - NO ripple effect styling
+===========
+*/
+
+.btn__effect--ripple {
+  position: absolute;
+  /* top: 20px;
+  left: 80px; */
+  background-color: var(--clr-primary-white);
+  width: 7rem;
+  height: 7rem;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  opacity: 1;
+  animation: scale 0.7s ease-out;
+}
+
+/*
+=============
+ripple effect styling
+=============
+*/
+
+@keyframes scale {
+  to {
+    transform: translate(-50%, -50%) scale(3);
+    opacity: 0;
+  }
+}
