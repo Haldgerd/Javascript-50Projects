@@ -1,0 +1,60 @@
+@import url("https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap");
+
+/*
+============
+variables
+============
+*/
+:root {
+  --clr-primary-neonGeen: hsl(135, 71%, 43%);
+  --clr-primary-dirtyWhite: hsl(0, 13%, 88%);
+  --clr-primary-smokeyBlack: hsl(0, 4%, 10%);
+  --padding-container: 0.5em 1em;
+  --padding-text: 0.5em;
+  --ff-primary: "Share Tech Mono", monospace;
+  --fs-key-InputText: 2rem;
+  --fs-text: 1.1rem;
+}
+
+/*
+===========
+general styling
+===========
+*/
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--clr-primary-smokeyBlack);
+  font-family: var(--ff-primary);
+  font-size: var(--fs-text);
+  color: var(--clr-primary-neonGeen);
+}
+
+main {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*
+=================
+keyboard event container
+=================
+*/
+.key__event__window {
+  text-align: center;
+  width: 85px;
+  height: 60px;
+  padding: var(--padding-container);
+  background-color: var(--clr-primary-dirtyWhite);
+  outline: 3px dashed var(--clr-primary-neonGeen);
+  margin-top: 0.5em;
+}
