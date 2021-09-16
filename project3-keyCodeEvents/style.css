@@ -49,12 +49,25 @@ main {
 keyboard event container
 =================
 */
-.key__event__window {
+
+.key__event__container {
+  width: 20%;
   text-align: center;
-  width: 85px;
+}
+
+.key__event__container + .key__event__container {
+  margin-left: 1em;
+}
+
+.key__event__window {
   height: 60px;
-  padding: var(--padding-container);
   background-color: var(--clr-primary-dirtyWhite);
   outline: 3px dashed var(--clr-primary-neonGeen);
   margin-top: 0.5em;
+  font-size: var(--fs-key-InputText);
+  color: var(--clr-primary-smokeyBlack);
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
