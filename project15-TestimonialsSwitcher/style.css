@@ -1,15 +1,15 @@
 @font-face {
   font-family: "mini_pixel-7regular";
-  src: url("minipixel7-6lkv-webfont.woff2") format("woff2"),
-    url("minipixel7-6lkv-webfont.woff") format("woff");
+  src: url("./fonts/minipixel7-6lkv-webfont.woff2") format("woff2"),
+    url("./fonts/minipixel7-6lkv-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "vaderiiiregular";
-  src: url("vaderiii-lg4-webfont.woff2") format("woff2"),
-    url("vaderiii-lg4-webfont.woff") format("woff");
+  src: url("./fonts/vaderiii-lg4-webfont.woff2") format("woff2"),
+    url("./fonts/vaderiii-lg4-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
@@ -22,14 +22,15 @@ variables
 
 :root {
   --clr--primary-smokeyBlack: hsl(0, 13%, 12%);
-  --clr-primary-oldNeonGreen: hsl(110, 92%, 31%);
+  --clr-primary-oldNeonGreen: hsl(98, 88%, 41%);
+  --clr-primary-neonGreen: hsl(106, 80%, 51%);
   --clr-primary-dirtyWhite: hsl(0, 17%, 92%);
   --transition: 0.5s linear;
   --ff-primary: "vaderiiiregular", monospace;
   --ff-secondary: "mini_pixel-7regular", monospace;
-  --fs-h2: 1.75rem;
-  --fs-primary: 1.15rem;
-  --padding-testimonial-container: 0.5rem;
+  --fs-h1: 4.5rem;
+  --fs-primary: 1.65rem;
+  --padding-testimonial-container: 0.75em 1em;
 }
 
 /*
@@ -46,19 +47,90 @@ general styles
   padding: 0;
 }
 
+body,
+section,
+.testimonial__content {
+  display: flex;
+}
+
 body {
   background-color: var(--clr--primary-smokeyBlack);
   min-height: 100vh;
-  display: flex;
   justify-content: center;
   align-items: center;
-  font-family: var(--ff-secondary);
   font-size: var(--fs-primary);
   color: var(--clr-primary-oldNeonGreen);
+  font-family: var(--ff-secondary);
+  text-transform: uppercase;
+}
+
+h1 {
+  letter-spacing: 0.9rem;
+  margin-bottom: 0.2em;
+  font-size: var(--fs-h1);
+  text-shadow: 0 0 2px var(--clr-primary-neonGreen);
 }
 
 main {
-  outline: 3px solid var(--clr-primary-dirtyWhite);
-  width: 700px;
-  height: 500px;
+  width: 60%;
+  padding: var(--padding-testimonial-container);
+}
+
+img {
+  height: 400px;
+  width: auto;
+  margin-right: 1em;
+  outline: 8px solid var(--clr-primary-dirtyWhite);
+}
+
+p + p {
+  margin-top: 0.3em;
+}
+
+/*
+=============
+testimonial content styles
+=============
+*/
+.testimonial__content {
+  flex-flow: column;
+}
+
+/*
+=============
+progress bar styles
+=============
+*/
+
+.progress__bar__container {
+  width: 100%;
+  height: 25px;
+  background-color: var(--clr-primary-dirtyWhite);
+  margin-top: 0.95em;
+  position: relative;
+}
+
+.progress__bar__container::before {
+  content: "";
+  width: 0%;
+  height: 100%;
+  position: absolute;
+  background-color: var(--clr-primary-oldNeonGreen);
+}
+
+/*
+=============
+pusling line style
+=============
+*/
+
+.line--pulsing {
+  animation: pulsing 0.8s infinite;
+  opacity: 1;
+}
+
+@keyframes pulsing {
+  to {
+    opacity: 0;
+  }
 }
