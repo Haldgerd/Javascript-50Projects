@@ -1,0 +1,64 @@
+@font-face {
+  font-family: "mini_pixel-7regular";
+  src: url("minipixel7-6lkv-webfont.woff2") format("woff2"),
+    url("minipixel7-6lkv-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "vaderiiiregular";
+  src: url("vaderiii-lg4-webfont.woff2") format("woff2"),
+    url("vaderiii-lg4-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/*
+================
+variables
+================
+*/
+
+:root {
+  --clr--primary-smokeyBlack: hsl(0, 13%, 12%);
+  --clr-primary-oldNeonGreen: hsl(110, 92%, 31%);
+  --clr-primary-dirtyWhite: hsl(0, 17%, 92%);
+  --transition: 0.5s linear;
+  --ff-primary: "vaderiiiregular", monospace;
+  --ff-secondary: "mini_pixel-7regular", monospace;
+  --fs-h2: 1.75rem;
+  --fs-primary: 1.15rem;
+  --padding-testimonial-container: 0.5rem;
+}
+
+/*
+==============
+general styles
+==============
+*/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--clr--primary-smokeyBlack);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--ff-secondary);
+  font-size: var(--fs-primary);
+  color: var(--clr-primary-oldNeonGreen);
+}
+
+main {
+  outline: 3px solid var(--clr-primary-dirtyWhite);
+  width: 700px;
+  height: 500px;
+}
