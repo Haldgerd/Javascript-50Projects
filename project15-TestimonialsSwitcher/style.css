@@ -28,7 +28,7 @@ variables
   --transition: 0.5s linear;
   --ff-primary: "vaderiiiregular", monospace;
   --ff-secondary: "mini_pixel-7regular", monospace;
-  --fs-h1: 4.5rem;
+  --fs-h1: 10vh;
   --fs-primary: 1.65rem;
   --padding-testimonial-container: 0.75em 1em;
 }
@@ -77,8 +77,9 @@ main {
 }
 
 img {
-  height: 400px;
-  width: auto;
+  height: 50vh;
+  min-height: 300px;
+  width: 350px;
   margin-right: 1em;
   outline: 8px solid var(--clr-primary-dirtyWhite);
 }
@@ -112,7 +113,7 @@ progress bar styles
 
 .progress__bar__container::before {
   content: "";
-  width: 0%;
+  width: 10%;
   height: 100%;
   position: absolute;
   background-color: var(--clr-primary-oldNeonGreen);
@@ -125,7 +126,7 @@ pusling line style
 */
 
 .line--pulsing {
-  animation: pulsing 0.8s infinite;
+  animation: pulsing 0.9s infinite;
   opacity: 1;
 }
 
