@@ -111,10 +111,18 @@ input {
 
 input:focus {
   outline: none;
+  border-bottom-color: var(--clr-primary-dirtyWhite);
 }
 
-input:focus ~ label {
+.form__elements label span {
+  display: inline;
+  width: min-content;
+  transition: 0.5s cubic-bezier(0.745, 0.65, 0.262, 1.55);
+}
+
+.form__elements input:focus ~ label span {
   color: var(--clr-primary-dirtyWhite);
+  transform: translateY(-100%);
 }
 
 div + div {
