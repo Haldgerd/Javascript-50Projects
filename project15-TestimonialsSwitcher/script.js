@@ -2,13 +2,13 @@ const crew = [
   {
     image: "./images/ash.jpg",
     name: "Ash",
-    description: " I admire its purity. A survivor. Unclouded by conscience, remorse, or delusions of morality.  You still don't understand what you're dealing with do you? Perfect organism. It's structural perfection is matched only by its hostility.",
+    description: "I admire its purity. A survivor. Unclouded by conscience, remorse, or delusions of morality.  You still don't understand what you're dealing with do you? Perfect organism. It's structural perfection is matched only by its hostility.",
     registration: "(23199 (609))"
   },
   {
     image: "./images/ripley.jpeg",
     name: "Ripley",
-    description: "Final report, the commercial star-ship Nostromo. Third officer reporting. The other members of the crew—Kane, Lambert, Parker, Brett, Ash, and Captain Dallas—are dead. Cargo and ship destroyed. I should reach the frontier within six weeks. With a little luck the network will pick me up.",
+    description: "Final report, the commercial star-ship Nostromo. Third officer reporting. The other members of the crew—Kane, Lambert, Parker, Brett, Ash, and Captain Dallas—are dead. Cargo and ship destroyed.",
     registration: "(38403 (555))"
   },
   {
@@ -25,22 +25,24 @@ const crew = [
   },
 ]
 
+// variables start
 const image = document.querySelector("img");
 
 const paragraphs = document.querySelectorAll("p");
 
-const loader = document.querySelector(".progress__bar__container");
+const overline = document.querySelector(".overline__bar");
 
-let timeout = 5000; //1000ms or 1s;
+let timeout = 10000; //1000ms or 1s;
 
 let start = 0;
+//variables end
 
-console.log(paragraphs);
 
-window.addEventListener("DOMContentLoaded", getNewReview);
+// code start
+window.addEventListener("DOMContentLoaded", updateReview);
 
-function getNewReview () {
-  
+function updateReview () {
+
   if (start === crew.length) {
     start = 0;
   }
@@ -49,14 +51,15 @@ function getNewReview () {
 
     image.src = crew[start].image;
 
-    paragraphs[0].innerHTML = "DESCRIPTION:<br>" + crew[start].description;
+    paragraphs[0].innerHTML = "DESCRIPTION:<br>\"" + crew[start].description + "\"";
 
     paragraphs[1].innerHTML = "NAME: " + crew[start].name;
 
     paragraphs[2].innerHTML = "REG: " + crew[start].registration;
 
     start++;
-    setTimeout(getNewReview, timeout);
-    clearTimeout(getNewReview);
   }
+  
+  setInterval(updateReview, timeout);
 }
+//code end
