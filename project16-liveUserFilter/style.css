@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=Share+Tech&display=swap");
+
+/*
+==========
+variables
+==========
+*/
+
+:root {
+  --clr-primary-duskBlack: hsl(0, 13%, 12%);
+  --clr-primary-pitchBlack: black;
+  --clr-primary-neonGreen: hsl(120, 84%, 49%);
+  --clr-primary-oldNeonGreen: hsl(130, 100%, 25%);
+  --clr-primary-dirtyWhite: hsl(0, 11%, 91%);
+  --ff-primary: "Share Tech", sans-serif;
+  --fs-primary: 1.2rem;
+  --fs-label: 1.15rem;
+  --padding-btn: 0.5em;
+  --padding-main: 1.5em 2em;
+  --margin-bottom-h1: 1em;
+}
+
+/*
+=============
+general styles
+=============
+*/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: var(--clr-primary-dirtyWhite);
+}
+
+body,
+form {
+  display: flex;
+}
+
+body {
+  background-color: var(--clr-primary-pitchBlack);
+  font-family: var(--ff-primary);
+  font-size: var(--fs-primary);
+  color: var(--clr-primary-neonGreen);
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  border: none;
+  background-color: var(--clr-primary-pitchBlack);
+  color: var(--clr-primary-dirtyWhite);
+  padding: var(--padding-btn);
+  margin: 3em 0;
+  font-size: var(--fs-label);
+  font-family: var(--ff-primary);
+  letter-spacing: 0.3rem;
+}
+
+h1 {
+  margin-bottom: var(--margin-bottom-h1);
+  align-self: center;
+}
+
+form {
+  /* padding: var(--padding-form); */
+  flex-flow: column;
+  /* justify-content: center;
+  align-items: center; */
+}
+
+main {
+  width: 30%;
+  padding: var(--padding-main);
+  background-color: var(--clr-primary-duskBlack);
+}
+
+label {
+  display: block;
+  margin-bottom: 1em;
+  font-size: var(--fs-label);
+}
+
+input {
+  border: none;
+  border-bottom: 3px solid var(--clr-primary-neonGreen);
+  background-color: transparent;
+  width: 100%;
+}
+
+input:focus {
+  outline: none;
+}
+
+div + div {
+  margin-top: 1.5em;
+}
