@@ -17,13 +17,20 @@
     <main class="main__container">
       <form action="" class="form__container">
         <h1 class="form__title">Please Login</h1>
-        <div class="form__email">
-          <label for="" class="email__label">Email</label>
-          <input type="text" class="email__input" />
+        <div class="form__email form__elements">
+          <input type="text" class="email__input" /><label
+            for=""
+            class="email__label"
+            >Email</label
+          >
+          <!-- label follows input because we want to target label when input is in focus. This can only be done by using general sibling or adjacent sibling operator. And only if target follows the focused element. -->
         </div>
-        <div class="form__password">
-          <label for="" class="password__label">Password</label>
-          <input type="text" class="password__input" />
+        <div class="form__password form__elements">
+          <input type="text" class="password__input" /><label
+            for=""
+            class="password__label"
+            >Password</label
+          >
         </div>
         <button type="submit">LOGIN</button>
         <p class="register__text">
