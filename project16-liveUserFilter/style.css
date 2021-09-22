@@ -83,6 +83,7 @@ form {
 }
 
 main {
+  text-align: center;
   width: 28%;
   min-width: 300px;
   max-width: 400px;
@@ -91,13 +92,12 @@ main {
 }
 
 label {
-  width: min-content;
   display: block;
   /* margin-bottom: 1em; */
   font-size: var(--fs-label);
   position: absolute;
   left: 0;
-  top: 3px;
+  top: 5px;
 }
 
 input {
@@ -114,27 +114,26 @@ input:focus {
   border-bottom-color: var(--clr-primary-dirtyWhite);
 }
 
-.form__elements label span {
-  display: inline;
-  width: min-content;
-  transition: 0.5s cubic-bezier(0.745, 0.65, 0.262, 1.55);
-}
-
-.form__elements input:focus ~ label span {
-  color: var(--clr-primary-dirtyWhite);
-  transform: translateY(-100%);
-}
-
-div + div {
-  margin-top: 3em;
-}
-
 /*
 ===============
 form password container 
 ===============
 */
 
-.form__elements {
+label span {
+  display: inline-block;
+}
+
+input:focus ~ label span {
+  color: var(--clr-primary-dirtyWhite);
+  transform: translateY(-100%);
+  /* transition: 0.5s cubic-bezier(0.745, 0.65, 0.262, 1.55); */
+}
+
+.form__control {
   position: relative;
+}
+
+.form__control + .form__control {
+  margin-top: 3em;
 }

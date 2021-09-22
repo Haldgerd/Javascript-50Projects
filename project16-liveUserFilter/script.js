@@ -1,4 +1,4 @@
-const labels = document.querySelectorAll("label");
+const labels = document.querySelectorAll(".form__control label");
 
 
 labels.forEach(label => {
