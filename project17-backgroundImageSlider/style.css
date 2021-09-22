@@ -1,0 +1,62 @@
+/*
+===========
+variables
+===========
+*/
+:root {
+  --clr-primary-smokeyYellow: hsl(56, 89%, 48%);
+  --clr-primary-duskBlacl: hsl(0, 13%, 9%);
+  --clr-primary-dirtyWhite: hsl(0, 5%, 85%);
+  --clr-primary-neonMagenta: hsla(308, 94%, 56%, 0.445);
+  --transition-img: 0.5s linear;
+  --ff-primary: monospace;
+  --fs-primary: 1.5rem;
+  --padding-slider: 0.5em;
+  --padding-btn: 0.25em;
+}
+
+/*
+===========
+general styles
+===========
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--ff-primary);
+  font-size: var(--fs-primary);
+  min-height: 100vh;
+  background: linear-gradient(
+      var(--clr-primary-neonMagenta),
+      var(--clr-primary-neonMagenta)
+    ),
+    url("./Images/neon-city.jpg");
+  /* the easy way of adding an overlay over an image, works only with linear-gradient. */
+
+  background-position: center center;
+  background-size: cover;
+  transition: 0.4s ease-out;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  background-color: var(--clr-primary-smokeyYellow);
+  border: none;
+  font-size: 2rem;
+  padding: var(--padding-btn);
+}
+
+/*
+==============
+slider container styles
+==============
+*/
