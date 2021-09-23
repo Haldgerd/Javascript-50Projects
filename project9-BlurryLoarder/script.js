@@ -1,10 +1,12 @@
 const percentage = document.querySelector(".loading__percentage");
+
 const containerWidth = document.querySelector(".loading__container");
 
 console.log(percentage.innerHTML);
 console.log(containerWidth);
 
 let addPercentage = 0; 
+
 let percentageInterval = setInterval(calcPercentage, 35);
 
 // containerWidth.style.width = `${50}%`;
