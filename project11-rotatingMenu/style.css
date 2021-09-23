@@ -1,0 +1,55 @@
+@font-face {
+  font-family: "auto_technoregular";
+  src: url("./Fonts/autotechnoregular-0vl9-webfont.woff2") format("woff2"),
+    url("./Fonts/autotechnoregular-0vl9-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/*
+============
+variables
+============
+*/
+:root {
+  --clr-primary-duskyBlack: black;
+  --clr-primary-bloodRed: red;
+  --clr-primary-dirtyWhite: white;
+  --padding-article: ;
+}
+
+/*
+=============
+general styles
+=============
+*/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  height: 100vh;
+  position: fixed;
+  z-index: 0;
+}
+
+img {
+  width: 100%;
+}
+
+/*
+==============
+article container
+==============
+*/
+
+.article__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
