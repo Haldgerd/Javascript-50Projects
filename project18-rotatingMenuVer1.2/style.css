@@ -1,0 +1,150 @@
+@font-face {
+  font-family: "auto_technoregular";
+  src: url("autotechnoregular-0vl9-webfont.woff2") format("woff2"),
+    url("autotechnoregular-0vl9-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/*
+============
+variables
+============
+*/
+
+:root {
+  --clr-primary-smokeyBlack: hsl(0, 3%, 23%);
+  --clr-primary-darkBlack: hsl(0, 3%, 12%);
+  --clr-primary-bloodRed: hsl(0, 79%, 28%);
+  --clr-primary-dirtyWhite: hsl(0, 5%, 70%);
+  --clr-primary-pureWhite: hsl(0, 0%, 100%);
+  --transition-square-menu: 0.5s ease;
+  --transition-menu: 0.3s linear;
+  --ff-primary: "auto_technoregular", monospace;
+  --ff-secondary: monospace;
+  --fs-heading-h1: 2rem;
+  --fs-navigation-links: 1rem;
+  --fs-paragraphs: 1.2rem;
+  --padding-li: 2em;
+  --padding-icons: 0.3em;
+  --padding-nav: 2em;
+}
+
+/*
+==============
+general styles
+==============
+*/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: var(--fs-paragraphs);
+  font-family: var(--ff-secondary);
+  background-color: var(--clr-primary-bloodRed);
+  overflow: hidden;
+}
+
+/* body::before {
+  font: normal normal normal 20px/1 FontAwesome;
+  content: "\f0c9";
+  color: var(--clr-primary-dirtyWhite);
+  width: 150px;
+  height: 150px;
+  background-color: var(--clr-primary-darkBlack);
+  top: 0;
+  left: 0;
+  transform: translateX(-50%) translateY(-50%);
+  position: absolute;
+  z-index: 1;
+} */
+
+.rotating__menu--square i {
+  color: var(--clr-primary-dirtyWhite);
+  font-size: 2rem;
+  position: absolute;
+}
+
+i.bar {
+  right: 25px;
+  bottom: 25px;
+}
+
+i.close {
+  bottom: 25px;
+  left: 25px;
+  transform: rotate(90deg);
+}
+
+nav {
+  width: 40%;
+  position: fixed;
+  bottom: 30px;
+  left: 30px;
+  color: var(--clr-primary-dirtyWhite);
+}
+
+ul i {
+  font-size: 1.5rem;
+  color: var(--clr-primary-dirtyWhite);
+  margin-right: 0.3em;
+}
+
+a {
+  display: block;
+  text-transform: uppercase;
+  list-style-type: none;
+  margin-top: 1em;
+  cursor: pointer;
+}
+
+main {
+  background-color: var(--clr-primary-dirtyWhite);
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  /* for rotate transform => transform-origin: top left; */
+  transition: var(--transition-square-menu);
+}
+
+/*
+=============
+rotating menu square style
+=============
+*/
+
+.rotating__menu--square {
+  height: 150px;
+  width: 150px;
+  /* transform: translateX(-50%) translateY(-50%); */
+  top: -75px;
+  left: -75px;
+  background-color: var(--clr-primary-darkBlack);
+  position: relative;
+  transition: var(--transition-square-menu);
+  z-index: 5;
+}
+
+.rotating__menu--square.active {
+  /* transform: translateX(-50%) translateY(-50%); QUESTION => Using this, when rotating should occur, the element jumps to position top: 0 left: 0 WHY? */
+  transform: rotate(-90deg);
+  transition: var(--transition-square-menu);
+}
+
+main.rotate--active {
+  transform: translateX(20rem);
+  /* transform-origin: top left; */
+  /* transform: rotate(-20deg); */
+  transition: var(--transition-square-menu);
+}
+
+.rotating__menu--rotate {
+  transform: rotate(-90deg);
+}
