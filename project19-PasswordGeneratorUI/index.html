@@ -25,7 +25,7 @@
     <main class="main__container">
       <h1 class="password__title">Password generator</h1>
       <div class="password__generator__content">
-        <input type="text" />
+        <span class="password__generator--output"></span>
         <button class="password__icon--clipboard">
           <i class="fas fa-clipboard"></i>
         </button>
@@ -33,7 +33,12 @@
       <div class="password__options">
         <div class="password__option">
           <label for="" class="password__option--label">Password length</label
-          ><input type="number" class="password__option--input" />
+          ><input
+            type="number"
+            min="5"
+            max="20"
+            class="password__option--input"
+          />
         </div>
         <div class="password__option">
           <label for="" class="password__option--label"

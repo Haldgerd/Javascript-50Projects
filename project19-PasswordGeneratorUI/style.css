@@ -90,6 +90,10 @@ main {
   padding: var(--padding-main);
 }
 
+span {
+  padding: var(--padding-output-password);
+}
+
 /*
 ====================
 password generator container style
@@ -99,8 +103,10 @@ password generator container style
 .password__generator__content {
   width: 100%;
   margin: var(--margin-password-generator);
+  padding: var(--padding-output-password);
 
   position: relative;
+  background-color: var(--clr-primary-dirtyWhite);
 }
 
 /*
@@ -162,10 +168,10 @@ input[type="checkbox"]:checked {
   background-color: var(--clr-primary-neonPink);
 } */
 
-input[type="text"] {
+/* span {
   width: 100%;
   padding: var(--padding-output-password);
-}
+} */
 
 input[type="text"]:focus,
 input[type="number"]:focus {
