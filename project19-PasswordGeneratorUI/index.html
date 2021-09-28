@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- font awesome CDN link -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- javascript -->
+    <script src="script.js" defer></script>
+
+    <title>Document</title>
+  </head>
+  <body>
+    <main class="main__container">
+      <h1 class="password__title">Password generator</h1>
+      <div class="password__generator__content">
+        <input type="text" />
+        <button class="password__icon--clipboard">
+          <i class="fas fa-clipboard"></i>
+        </button>
+      </div>
+      <div class="password__options">
+        <div class="password__option">
+          <label for="" class="password__option--label">Password length</label
+          ><input type="number" class="password__option--input" />
+        </div>
+        <div class="password__option">
+          <label for="" class="password__option--label"
+            >include uppercase letters</label
+          ><input type="checkbox" class="password__option--input" />
+        </div>
+        <div class="password__option">
+          <label for="" class="password__option--label"
+            >include lovercase letters</label
+          ><input type="checkbox" class="password__option--input" />
+        </div>
+        <div class="password__option">
+          <label for="" class="password__option--label">include numbers</label
+          ><input type="checkbox" class="password__option--input" />
+        </div>
+        <div class="password__option">
+          <label for="" class="password__option--label">include symbols</label
+          ><input type="checkbox" class="password__option--input" />
+        </div>
+      </div>
+      <button class="password__generator--btn">Generate password</button>
+    </main>
+  </body>
+</html>

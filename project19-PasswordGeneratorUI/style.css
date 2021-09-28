@@ -1,0 +1,173 @@
+@import url("https://fonts.googleapis.com/css2?family=Share+Tech&display=swap");
+
+/*
+============
+variables
+============
+*/
+
+:root {
+  --clr-primary-darkYellow: hsl(46, 96%, 50%);
+  --clr-primary-pureBlack: hsl(0, 5%, 22%);
+  --clr-primary-dirtyWhite: hsl(0, 14%, 91%);
+  --clr-primary-neonPink: hsl(350, 85%, 44%);
+  --padding-main: 2em;
+  --padding-btn: 0.75em 1em;
+  --padding-output-password: 0.5em;
+  --ff-primary: "Share Tech", sans-serif;
+  --fs-btn: 1.15rem;
+  --margin-password-options: 1em;
+  --margin-password-generator: 1em 0;
+  --margin-btn: 1.25em;
+}
+
+/*
+=============
+general styles
+=============
+*/
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body,
+.password__option {
+  display: flex;
+}
+
+body {
+  min-height: 100vh;
+
+  background-color: var(--clr-primary-darkYellow);
+  color: var(--clr-primary-dirtyWhite);
+  font-family: var(--ff-primary);
+  text-transform: capitalize;
+
+  justify-content: center;
+  align-items: center;
+}
+
+button:not(.password__icon--clipboard) {
+  width: 100%;
+  padding: var(--padding-btn);
+  margin-top: var(--margin-btn);
+
+  text-transform: uppercase;
+  font-family: inherit;
+  font-size: var(--fs-btn);
+  font-weight: bold;
+  letter-spacing: 3px;
+  color: var(--clr-primary-dirtyWhite);
+
+  border: none;
+  background-color: var(--clr-primary-neonPink);
+}
+
+button:hover {
+  box-shadow: 0 0 40px var(--clr-primary-neonPink);
+}
+
+h1 {
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+i {
+  color: var(--clr-primary-dirtyWhite);
+  font-size: 1.2rem;
+}
+
+main {
+  width: clamp(400px, 40%, 400px);
+  background-color: var(--clr-primary-pureBlack);
+
+  padding: var(--padding-main);
+}
+
+/*
+====================
+password generator container style
+====================
+*/
+
+.password__generator__content {
+  width: 100%;
+  margin: var(--margin-password-generator);
+
+  position: relative;
+}
+
+/*
+====================
+clipboard button style
+====================
+*/
+
+.password__icon--clipboard {
+  position: absolute;
+  top: 0;
+  right: 0;
+  /* right: 10px;
+  bottom: 4px; */
+  width: 10%;
+  height: 100%;
+
+  border: none;
+  background-color: var(--clr-primary-neonPink);
+}
+
+/*
+====================
+password options container style
+====================
+*/
+.password__options {
+  margin-top: 1.75em;
+}
+
+.password__option {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.password__option + .password__option {
+  margin-top: 0.75em;
+}
+
+/*
+====================
+input type styles
+====================
+*/
+input {
+  font-family: inherit;
+}
+
+input[type="number"] {
+  width: 45px;
+  padding: 0.3em;
+}
+
+/* input[type="checkbox"] {
+  border: none;
+}
+
+input[type="checkbox"]:checked {
+  background-color: var(--clr-primary-neonPink);
+} */
+
+input[type="text"] {
+  width: 100%;
+  padding: var(--padding-output-password);
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+  outline: 3px solid var(--clr-primary-neonPink);
+}
