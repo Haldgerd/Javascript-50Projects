@@ -1,11 +1,24 @@
+const checkboxes = document.querySelectorAll("input[type=checkbox]");
+
+const passwordLength = document.querySelector("input[type=number]");
+
+
+// console.log(getRandomLowercase());
+
+// console.log(getRandomSymbol());
+
+console.log(passwordLength.value);
+
+checkboxes.forEach(checkbox => {
+  if (checkbox.checked) {
+    console.log(checkbox.classList);
+    console.log("checked");
+  }
+});
 
 
 
-console.log(getRandomLowercase());
-
-console.log(getRandomSymbol());
-
-
+// functions
 function getRandomLowercase () {
 
   return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
