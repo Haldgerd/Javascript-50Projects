@@ -6,43 +6,58 @@ const passwordOutput = document.querySelector(".password__generator--output");
 
 const clipboard = document.querySelector(".password__icon--clipboard");
 
+const generatePassword = document.querySelector(".password__generator--btn");
+
 const allFunctions = [getRandomLowercase, getRandomUppercase, getRandomSymbol, getRandomNumber];
 
 let password = [];
 
-// console.log(passwordOutput);
-// console.log(allFunctions);
-// console.log(allFunctions[0]());
-// console.log(passwordLength.value);
 
 
-getCheckboxes();
+generatePassword.addEventListener("click", () => {
 
-if (passwordLength.value){
+  if (passwordOutput.innerHTML) {
 
-  for (let initial = 0; initial < passwordLength.value; initial++) {
-
-    let symbol = allFunctions[Math.floor(Math.random() * allFunctions.length)]();
-
-    password.push(symbol);
+    passwordOutput.innerHTML = "";
+    password = [];
   }
 
-  password = password.join(""); 
+  console.log("generating password!");
 
-} else {
-  console.log("There is no value.");
-}
+  getCheckboxes();
 
-console.log(password);
-passwordOutput.textContent = password;
+  if (passwordLength.value){
+
+    for (let initial = 0; initial < passwordLength.value; initial++) {
+
+      let symbol = allFunctions[Math.floor(Math.random() * allFunctions.length)]();
+
+      password.push(symbol);
+    }
+
+    password = password.join(""); 
+
+  } else if (typeof passwordLength !== "number" || !passwordLength){
+
+    alert("Please enter a valid integer value.");
+  }
+
+  // console.log(password);
+
+  passwordOutput.textContent = password;
+
+});
 
 
 clipboard.addEventListener("click", () => {
-alert("Copied to clipboard.");
+
+  alert("Copied to clipboard.");
+
  navigator.clipboard.writeText(passwordOutput.innerHTML);
 // //  this doesn't work on IE. Might need to find some fallback code for this.
 // https://stackoverflow.com/questions/33855641/copy-output-of-a-javascript-variable-to-the-clipboard
 });
+
 
 
 // functions
