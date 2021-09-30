@@ -8,44 +8,52 @@ const clipboard = document.querySelector(".password__icon--clipboard");
 
 const generatePassword = document.querySelector(".password__generator--btn");
 
-const allFunctions = [getRandomLowercase, getRandomUppercase, getRandomSymbol, getRandomNumber];
+const functionClassBinding = {
+  uppercase__checkbox: getRandomUppercase,
+  lowercase__checkbox: getRandomLowercase,
+  number__checkbox: getRandomNumber,
+  symbol__checkbox: getRandomSymbol,
+}
 
 let password = [];
 
 
-
+// MAIN FUNCTIONALITY
 generatePassword.addEventListener("click", () => {
 
+  let arrayOfCheckboxes = getCheckboxes();
+  console.log(arrayOfCheckboxes);
+
+  // returns array of all the object keys!!! YAY
+  let objectKeys = Object.keys(functionClassBinding);
+  console.log(objectKeys);
+
+  // checking if password is displayed, delete it, reset everything.
   if (passwordOutput.innerHTML) {
 
     passwordOutput.innerHTML = "";
-    password = [];
   }
 
-  console.log("generating password!");
-
-  getCheckboxes();
-
+  //  if there is a value passed to password length input
   if (passwordLength.value){
 
     for (let initial = 0; initial < passwordLength.value; initial++) {
 
-      let symbol = allFunctions[Math.floor(Math.random() * allFunctions.length)]();
-
-      password.push(symbol);
+      if (arrayOfCheckboxes) {
+        createPassword(arrayOfCheckboxes);
+      } else {
+        createPassword(objectKeys);
+      } 
     }
 
-    password = password.join(""); 
-
   } else if (typeof passwordLength !== "number" || !passwordLength){
+    // if there's no value of invalid value, alert the user.
 
     alert("Please enter a valid integer value.");
-  }
+  } 
 
-  // console.log(password);
-
-  passwordOutput.textContent = password;
-
+  //  output the password
+  passwordOutput.textContent = password.join("");
 });
 
 
@@ -53,24 +61,39 @@ clipboard.addEventListener("click", () => {
 
   alert("Copied to clipboard.");
 
- navigator.clipboard.writeText(passwordOutput.innerHTML);
+  navigator.clipboard.writeText(passwordOutput.innerHTML);
 // //  this doesn't work on IE. Might need to find some fallback code for this.
 // https://stackoverflow.com/questions/33855641/copy-output-of-a-javascript-variable-to-the-clipboard
 });
 
 
 
-// functions
+// FUNCTIONS
+function createPassword(array) {
+
+   // randomly chose between given functions in range of password length input. Functions return a symbol-single item.
+   let symbol = functionClassBinding[array[Math.floor(Math.random() * array.length)]()];
+
+   password.push(symbol);
+}
+
+
 function getCheckboxes () {
 
-  checkboxes.forEach(checkbox => {
+  let checkedCheckboxes = [];
 
+  checkboxes.forEach(checkbox => {  
+    
     if (checkbox.checked) {
 
-      console.log(checkbox.classList);
+      checkedCheckboxes.push(checkbox.classList[1]);
+
+      // console.log(checkbox.classList[1]);
       // console.log("checked");
     }
   });
+
+  return checkedCheckboxes;
 }
 
 
