@@ -98,6 +98,8 @@ main {
 span {
   padding: var(--padding-output-password);
   max-width: calc(100% - 45px);
+  color: var(--clr-primary-pureBlack);
+  font-size: 1.5rem;
   /* so it doesn't go over the button. */
 }
 
