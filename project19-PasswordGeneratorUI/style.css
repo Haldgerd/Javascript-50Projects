@@ -46,7 +46,6 @@ body {
   background-color: var(--clr-primary-darkYellow);
   color: var(--clr-primary-dirtyWhite);
   font-family: var(--ff-primary);
-  text-transform: capitalize;
 
   justify-content: center;
   align-items: center;
@@ -86,6 +85,10 @@ h1 {
 i {
   color: var(--clr-primary-dirtyWhite);
   font-size: 1.2rem;
+}
+
+label {
+  text-transform: capitalize;
 }
 
 main {
