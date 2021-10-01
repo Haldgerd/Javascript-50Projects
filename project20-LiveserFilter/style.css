@@ -1,0 +1,156 @@
+@font-face {
+  font-family: "mad_hackerregular";
+  src: url("./fonts/madhacker-yyqv-webfont.woff2") format("woff2"),
+    url("./fonts/madhacker-yyqv-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/*
+===========
+variables
+===========
+*/
+
+:root {
+  --clr-primary-cyberpunkPink: hsl(330, 78%, 44%);
+  --clr-primary-duskBlack: hsl(0, 8%, 16%);
+  --clr-primary-dirtyWhite: hsl(0, 15%, 88%);
+  --ff-header-h1: "mad_hackerregular";
+  --ff-primary: monospace;
+  --fs-heading-h1: clamp(55px, 7vw, 120px);
+  --fs-heading-h2: clamp(20px, 2vh, 50px);
+  --fs-paragraphs: 0.75rem;
+  --padding-header: 1em;
+  --padding-search-input: 1em;
+  --padding-body: 3em 0;
+  --text-image: url("./image/screen_lornas.jpg");
+  --margin-input: 3em 0;
+}
+
+/*
+===============
+general styles
+===============
+*/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body,
+.search__users {
+  display: flex;
+}
+
+body {
+  /* background-color: var(--clr-primary-cyberpunkPink); */
+  background-color: var(--clr-primary-duskBlack);
+  font-family: var(--ff-primary);
+  font-size: var(--fs-paragraphs);
+  color: var(--clr-primary-dirtyWhite);
+
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: var(--padding-body);
+}
+
+h1 {
+  font-size: var(--fs-heading-h1);
+  font-family: var(--ff-header-h1);
+
+  text-transform: uppercase;
+  background-image: var(--text-image);
+  background-position: 50% 80%;
+  background-clip: text;
+  background-size: cover;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+h2 {
+  font-family: var(--ff-header-h1);
+  font-size: var(--fs-heading-h2);
+  color: var(--clr-primary-cyberpunkPink);
+}
+
+section {
+  /* background-color: var(--clr-primary-duskBlack); */
+  width: clamp(300px, 80%, 800px);
+}
+
+input[type="text"] {
+  border: none;
+  padding: var(--padding-search-input);
+  width: max(360px, 50%);
+  margin: var(--margin-input);
+
+  font-family: inherit;
+}
+
+input[type="text"]:focus {
+  outline: 4px solid var(--clr-primary-cyberpunkPink);
+}
+
+/*
+==============
+search header style
+==============
+*/
+
+/* .search__header {
+  padding: var(--padding-header);
+} */
+
+.search__description {
+  color: var(--clr-primary-dirtyWhite);
+}
+
+/*
+==============
+search user container style
+==============
+*/
+
+.search__users {
+  align-items: center;
+}
+
+.user__information {
+  margin-left: 1em;
+}
+
+.user__position {
+  margin-bottom: 0.8em;
+}
+
+.user__position,
+.user__location {
+  padding-left: 0.3em;
+}
+
+/*
+==============
+user image style
+==============
+*/
+
+.user__img {
+  width: 90px;
+  height: 90px;
+}
+
+/*
+==============
+search content style - user feed
+==============
+*/
+
+.search__content {
+  margin-top: 1, 75em;
+}
