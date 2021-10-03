@@ -1,7 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&display=swap");
+
 @font-face {
-  font-family: "mad_hackerregular";
-  src: url("./fonts/madhacker-yyqv-webfont.woff2") format("woff2"),
-    url("./fonts/madhacker-yyqv-webfont.woff") format("woff");
+  font-family: "mini_pixel-7regular";
+  src: url("./fonts/minipixel7-6lkv-webfont.woff2") format("woff2"),
+    url("./fonts/minipixel7-6lkv-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
@@ -13,17 +15,20 @@ variables
 */
 
 :root {
-  --clr-primary-cyberpunkPink: hsl(330, 78%, 44%);
+  --clr-primary-cyberpunkPink: hsl(330, 91%, 29%);
+  --clr-primary-azure: hsl(202, 89%, 39%);
+  --clr-primary-darkPink: hsl(331, 87%, 27%);
   --clr-primary-duskBlack: hsl(0, 8%, 16%);
   --clr-primary-dirtyWhite: hsl(0, 15%, 88%);
-  --ff-header-h1: "mad_hackerregular";
-  --ff-primary: monospace;
-  --fs-heading-h1: clamp(55px, 7vw, 120px);
+  --ff-header-h1: "mini_pixel-7regular";
+  --ff-primary: "IBM Plex Mono", monospace;
+  --fs-heading-h1: clamp(90px, 6vw, 500px);
   --fs-heading-h2: clamp(20px, 2vh, 50px);
-  --fs-paragraphs: 0.75rem;
+  --fs-paragraphs: 0.9rem;
   --padding-header: 1em;
   --padding-search-input: 1em;
   --padding-body: 3em 0;
+  --padding-searc-users: 1em;
   --text-image: url("./image/screen_lornas.jpg");
   --margin-input: 3em 0;
 }
@@ -48,29 +53,31 @@ body,
 }
 
 body {
-  /* background-color: var(--clr-primary-cyberpunkPink); */
   background-color: var(--clr-primary-duskBlack);
   font-family: var(--ff-primary);
   font-size: var(--fs-paragraphs);
   color: var(--clr-primary-dirtyWhite);
+  overflow: hidden;
 
   justify-content: center;
   align-items: flex-start;
   min-height: 100vh;
+
   padding: var(--padding-body);
 }
 
 h1 {
-  font-size: var(--fs-heading-h1);
   font-family: var(--ff-header-h1);
+  font-size: var(--fs-heading-h1);
 
   text-transform: uppercase;
-  background-image: var(--text-image);
-  background-position: 50% 80%;
+  color: var(--clr-primary-darkPink);
+  /* background-image: var(--text-image);
+  background-position: center center;
   background-clip: text;
-  background-size: cover;
   -webkit-background-clip: text;
-  color: transparent;
+  color: transparent; */
+  text-align: center;
 }
 
 h2 {
@@ -80,21 +87,24 @@ h2 {
 }
 
 section {
-  /* background-color: var(--clr-primary-duskBlack); */
-  width: clamp(300px, 80%, 800px);
+  width: clamp(250px, 80%, 500px);
+  margin-bottom: 3em;
 }
 
 input[type="text"] {
   border: none;
   padding: var(--padding-search-input);
-  width: max(360px, 50%);
+  width: 90%;
   margin: var(--margin-input);
+  background-color: var(--clr-primary-cyberpunkPink);
+  color: var(--clr-primary-duskBlack);
+  border-radius: 50px;
 
   font-family: inherit;
 }
 
 input[type="text"]:focus {
-  outline: 4px solid var(--clr-primary-cyberpunkPink);
+  outline: 4px solid var(--clr-primary-azure);
 }
 
 /*
@@ -103,12 +113,21 @@ search header style
 ==============
 */
 
-/* .search__header {
+.search__header {
+  background-color: var(--clr-primary-cyberpunkPink);
   padding: var(--padding-header);
-} */
+  background-image: var(--text-image);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
 .search__description {
   color: var(--clr-primary-dirtyWhite);
+}
+
+.search__description {
+  padding-left: 0.5em;
 }
 
 /*
@@ -119,6 +138,15 @@ search user container style
 
 .search__users {
   align-items: center;
+  padding: var(--padding-searc-users);
+  transition: 0.3s linear;
+  border-bottom: 2px solid var(--clr-primary-azure);
+  /* outline: 0.5px solid var(--clr-primary-dirtyWhite); */
+}
+
+.user__name {
+  font-size: 1.7rem;
+  letter-spacing: 1px;
 }
 
 .user__information {
@@ -143,6 +171,8 @@ user image style
 .user__img {
   width: 90px;
   height: 90px;
+  border-radius: 50px;
+  outline: 5px solid var(--clr-primary-cyberpunkPink);
 }
 
 /*
@@ -153,4 +183,8 @@ search content style - user feed
 
 .search__content {
   margin-top: 1, 75em;
+  overflow-y: scroll;
+  background-color: var(--clr-primary-dirtyWhite);
+  color: var(--clr-primary-duskBlack);
+  /* height: 500px; */
 }
