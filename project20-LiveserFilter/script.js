@@ -1,50 +1,82 @@
 const users = [
   {
-    image: url("./images/circle-cropped(1).png"),
+    image: "./image/circle-cropped(1).png",
     name: "Johanna Strauss",
     position: "UI/UX designer",
     location: "Berlin, Germany",
   },
   {
-    image: url("./images/circle-cropped.png"),
+    image: "./image/circle-cropped.png",
     name: "Freya Olmo",
     position: "People Manager",
     location: "Malmo, Sweden",
   },
   {
-    image: url("./images/circle-cropped(2).png"),
+    image: "./image/circle-cropped(2).png",
     name: "Khan Jo",
     position: "Front end developer",
     location: "Syndey, Australia",
   },
   {
-    image: url("./images/circle-cropped(4).png"),
+    image: "./image/screen_lornas.jpg",
     name: "Sashi Paravani",
     position: "Junior DevOp",
     location: "Singapur, India",
   },
   {
-    image: url("./images/burn-lorna.jpeg"),
+    image: "./image/burn_lorna.jpeg",
     name: "Rachel Gray",
     position: "Back end developer",
     location: "London, UK",
   },
    {
-    image: url("./images/cyberpunk.jpeg"),
-    name: "Nika Vidković",
+    image: "./image/cyberpunk.jpeg",
+    name: "Nika Vidkovic",
     position: "graphic designer",
     location: "Beograd, Serbia",
   },
   {
-    image: url("./images/nintendo.jpeg"),
+    image: "./image/nintendo.jpeg",
     name: "Jeff Gregory",
     position: "SEO specialist",
     location: "Tallin, Estonia",
   },
   {
-    image: url("./images/circle-cropped(3).png"),
+    image: "./image/circle-cropped(3).png",
     name: "Monica Gerarro",
     position: "Project Manager",
     location: "Verona, Italy",
   },
 ]
+
+const userDisplay = document.querySelector(".search__content");
+
+const searchInput = document.querySelector("input");
+
+window.addEventListener("DOMContentLoaded", () => {
+  createUserFeed(users);
+});
+
+
+
+function createUserFeed(items) {
+  let userElements = items.map(item => {
+    console.log(item);
+    console.log(item.name);
+
+    return `
+      <div class="search__users">
+        <img src=${item.image} alt="" class="user__img" />
+        <div class="user__information">
+          <h2 class="user__name">${item.name}</h2>
+          <p class="user__position">${item.position}</p>
+          <p class="user__location">${item.location}</p>
+        </div>
+      </div>
+    `;
+  });
+
+  userElements = userElements.join("");
+  userDisplay.innerHTML = userElements;
+
+}

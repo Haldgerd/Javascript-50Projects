@@ -145,7 +145,7 @@ search user container style
 }
 
 .user__name {
-  font-size: 1.7rem;
+  font-size: 1.5rem;
   letter-spacing: 1px;
 }
 
@@ -154,12 +154,7 @@ search user container style
 }
 
 .user__position {
-  margin-bottom: 0.8em;
-}
-
-.user__position,
-.user__location {
-  padding-left: 0.3em;
+  margin-bottom: 0.5em;
 }
 
 /*
@@ -186,5 +181,5 @@ search content style - user feed
   overflow-y: scroll;
   background-color: var(--clr-primary-dirtyWhite);
   color: var(--clr-primary-duskBlack);
-  /* height: 500px; */
+  height: 480px;
 }
