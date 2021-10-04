@@ -94,7 +94,7 @@ section {
 input[type="text"] {
   border: none;
   padding: var(--padding-search-input);
-  width: 90%;
+  width: 100%;
   margin: var(--margin-input);
   background-color: var(--clr-primary-cyberpunkPink);
   color: var(--clr-primary-duskBlack);
@@ -177,9 +177,8 @@ search content style - user feed
 */
 
 .search__content {
-  margin-top: 1, 75em;
-  overflow-y: scroll;
+  overflow-y: auto;
   background-color: var(--clr-primary-dirtyWhite);
   color: var(--clr-primary-duskBlack);
-  height: 480px;
+  height: max(600px);
 }
