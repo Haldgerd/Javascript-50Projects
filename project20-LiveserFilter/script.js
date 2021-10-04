@@ -60,7 +60,13 @@ window.addEventListener("DOMContentLoaded", () => {
 
 
 function createUserFeed(items) {
+
+  let counter = 0;
+
   let userElements = items.map(item => {
+
+    counter++;
+
     console.log(item);
     console.log(item.name);
 
@@ -68,7 +74,7 @@ function createUserFeed(items) {
       <div class="search__users">
         <img src=${item.image} alt="" class="user__img" />
         <div class="user__information">
-          <h2 class="user__name">${item.name}</h2>
+          <h2 class="user__name">0${counter}>> ${item.name}</h2>
           <p class="user__position">${item.position}</p>
           <p class="user__location">${item.location}</p>
         </div>
