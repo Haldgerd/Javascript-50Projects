@@ -48,6 +48,7 @@ const users = [
     location: "Verona, Italy",
   },
 ]
+// or use random user API at https://randomuser.me/
 
 const userDisplay = document.querySelector(".search__content");
 
@@ -63,6 +64,25 @@ window.addEventListener("DOMContentLoaded", () => {
   users.forEach(user => {
 
     createElement(user);
+  });
+
+  const userData = document.querySelectorAll(".search__users");
+
+  searchInput.addEventListener("input", (e) => {
+
+    userData.forEach(user => {
+
+      if (user.innerText.toLowerCase().includes(e.currentTarget.value.toLowerCase())) {
+
+        user.classList.remove("hide");
+
+      } else {
+
+        user.classList.add("hide");
+
+      }
+  
+    })
   });
 });
 
@@ -83,7 +103,7 @@ function createElement(user) {
 
   divisor.innerHTML = `<img src=${user.image} alt="" class="user__img" />
   <div class="user__information">
-    <h2 class="user__name">0${counter} ${user.name}</h2>
+    <h2 class="user__name">${user.name}</h2>
     <p class="user__position">${user.position}</p>
     <p class="user__location">${user.location}</p>
   </div>`

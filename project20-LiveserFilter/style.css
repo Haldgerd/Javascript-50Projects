@@ -137,16 +137,22 @@ search user container style
 */
 
 .search__users {
+  display: flex;
   align-items: center;
   padding: var(--padding-searc-users);
   transition: 0.3s linear;
-  border-bottom: 2px solid var(--clr-primary-azure);
+  /* border-bottom: 2px solid var(--clr-primary-azure); */
   /* outline: 0.5px solid var(--clr-primary-dirtyWhite); */
 }
 
-/* .search__users:not(:nth-child(8)) {
+.search__users.hide {
+  display: none;
+}
+
+.search__users:not(:nth-child(8)) {
   border-bottom: 2px solid var(--clr-primary-azure);
-}  selects last element based on their position in a group of siblings*/
+  /* }  selects last element based on their position in a group of siblings */
+}
 
 .user__name {
   font-size: 1.5rem;
@@ -184,7 +190,7 @@ search content style - user feed
   overflow-y: auto;
   background-color: var(--clr-primary-dirtyWhite);
   color: var(--clr-primary-duskBlack);
-  height: max(600px);
+  max-height: 600px;
 }
 
 /*
@@ -194,6 +200,11 @@ loading text style
 */
 
 .loading__container {
+  display: none;
+}
+
+.loading__container.active {
+  display: block;
   text-transform: uppercase;
   font-weight: bolder;
   text-align: center;
