@@ -53,11 +53,13 @@ const userDisplay = document.querySelector(".search__content");
 
 const searchInput = document.querySelector("input");
 
+const loadingText = document.querySelector(".loading__container");
+
 let counter = 0;
 
-window.addEventListener("DOMContentLoaded", () => {
-  // createUserFeed(users);
 
+window.addEventListener("DOMContentLoaded", () => {
+ 
   users.forEach(user => {
 
     createElement(user);
@@ -65,7 +67,12 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 
 
-
+// method 1, dynamicaly creating html elements with user information, depending on user count(amount) inside array of objects.
+  /**
+ * Creates html elements with innerHTML.
+ *
+ * @param {Array} user Array of objects.
+ */
 function createElement(user) {
 
   counter++;
@@ -76,16 +83,14 @@ function createElement(user) {
 
   divisor.innerHTML = `<img src=${user.image} alt="" class="user__img" />
   <div class="user__information">
-    <h2 class="user__name">0${counter}>> ${user.name}</h2>
+    <h2 class="user__name">0${counter} ${user.name}</h2>
     <p class="user__position">${user.position}</p>
     <p class="user__location">${user.location}</p>
   </div>`
 
-  userDisplay.appendChild(divisor);
+  // userDisplay.appendChild(divisor);
+  userDisplay.insertBefore(divisor, loadingText);
 }
-
-
-
 
 // variation - method 2 of displaying content dynamicaly
 // function createUserFeed(items) {
@@ -115,3 +120,4 @@ function createElement(user) {
 
 //   userDisplay.innerHTML = userElements;
 // }
+

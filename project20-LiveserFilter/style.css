@@ -144,6 +144,10 @@ search user container style
   /* outline: 0.5px solid var(--clr-primary-dirtyWhite); */
 }
 
+/* .search__users:not(:nth-child(8)) {
+  border-bottom: 2px solid var(--clr-primary-azure);
+}  selects last element based on their position in a group of siblings*/
+
 .user__name {
   font-size: 1.5rem;
   letter-spacing: 1px;
@@ -181,4 +185,17 @@ search content style - user feed
   background-color: var(--clr-primary-dirtyWhite);
   color: var(--clr-primary-duskBlack);
   height: max(600px);
+}
+
+/*
+==============
+loading text style
+==============
+*/
+
+.loading__container {
+  text-transform: uppercase;
+  font-weight: bolder;
+  text-align: center;
+  padding: 1em;
 }
