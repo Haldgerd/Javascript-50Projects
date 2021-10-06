@@ -1,0 +1,42 @@
+/*
+===========
+variables
+===========
+*/
+
+:root {
+  --clr-primary-duskBlack: hsl(338, 6%, 27%);
+  --clr-primary-dullRed: hsl(0, 83%, 60%);
+  --clr-primary-pureWhite: hsl(0, 83%, 100%);
+}
+
+/*
+==========
+general
+==========
+*/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--clr-primary-duskBlack);
+  justify-content: center;
+  align-items: end;
+}
+
+main {
+  background-color: var(--clr-primary-dullRed);
+  height: 90vh;
+  width: 80vw;
+}
