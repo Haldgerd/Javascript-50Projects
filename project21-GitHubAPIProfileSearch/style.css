@@ -8,6 +8,17 @@ variables
   --clr-primary-duskBlack: hsl(338, 6%, 27%);
   --clr-primary-dullRed: hsl(0, 83%, 60%);
   --clr-primary-pureWhite: hsl(0, 83%, 100%);
+  --fs-h1: 5rem;
+  --fs-h2: 1.5rem;
+  --fs-h3: 1.1rem;
+  --fs-secondary: 0.75rem;
+  --padding-h1: 0.3em 0 0 0;
+  --padding-h3: 0.3em 0;
+  --padding-body: 2em 0 0 0;
+  --padding-container-left: 2em 0;
+  --padding-container-right: 1em;
+  --padding-input: 0.75em;
+  --margin-input: 1.75em;
 }
 
 /*
@@ -24,19 +35,110 @@ general
   padding: 0;
 }
 
-body {
+body,
+main,
+.github__container--right,
+.github__user__reputation,
+.github__user--display {
   display: flex;
 }
 
 body {
   min-height: 100vh;
-  background-color: var(--clr-primary-duskBlack);
-  justify-content: center;
-  align-items: end;
+  background-color: var(--clr-primary-dullRed);
+  color: var(--clr-primary-pureWhite);
+  font-size: var(--fs-secondary);
+  overflow-x: hidden;
+}
+
+i {
+  font-size: 9rem;
+  color: var(--clr-primary-dullRed);
+}
+
+input[type="text"] {
+  border: none;
+  width: 60%;
+  padding: var(--padding-input);
+  margin-top: var(--margin-input);
+}
+
+input[type="text"]:focus {
+  outline: 5px solid var(--clr-primary-dullRed);
+}
+
+img {
+  height: 100px;
+  width: 100px;
+  outline: 5px solid var(--clr-primary-duskBlack);
+  border-radius: 50%;
+  align-self: center;
+  margin-right: 0.7em;
+}
+
+h1 {
+  padding: var(--padding-h1);
+  font-size: var(--fs-h1);
+}
+
+h2 {
+  text-transform: uppercase;
+  font-size: var(--fs-h2);
+}
+
+h3 {
+  padding: var(--padding-h3);
+  text-transform: uppercase;
+  font-size: var(--fs-h3);
 }
 
 main {
+  flex-flow: column;
   background-color: var(--clr-primary-dullRed);
-  height: 90vh;
-  width: 80vw;
+}
+
+span {
+  color: var(--clr-primary-dullRed);
+}
+
+/*
+==========
+main container left style
+==========
+*/
+
+.github__container--left {
+  background-color: var(--clr-primary-duskBlack);
+  text-align: center;
+  padding: var(--padding-container-left);
+}
+
+/*
+==========
+main container right style
+==========
+*/
+
+.github__container--right {
+  padding: 2em 2em;
+}
+
+.github__user--display {
+  background-color: var(--clr-primary-duskBlack);
+  width: 100%;
+  padding: 1em 1em;
+}
+
+.github__user__reputation {
+  padding: 1.5em 0;
+  justify-content: flex-start;
+  color: var(--clr-primary-dullRed);
+  font-weight: bold;
+}
+
+.github__user__reputation > p + p {
+  margin-left: 1.1em;
+}
+
+@media screen and (min-width: 850px) {
 }
