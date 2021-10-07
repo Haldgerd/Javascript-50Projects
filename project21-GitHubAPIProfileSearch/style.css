@@ -45,7 +45,7 @@ main,
 
 body {
   min-height: 100vh;
-  background-color: var(--clr-primary-dullRed);
+  /* background-color: var(--clr-primary-dullRed); */
   color: var(--clr-primary-pureWhite);
   font-size: var(--fs-secondary);
   overflow-x: hidden;
@@ -58,7 +58,7 @@ i {
 
 input[type="text"] {
   border: none;
-  width: 60%;
+  width: 70%;
   padding: var(--padding-input);
   margin-top: var(--margin-input);
 }
@@ -72,7 +72,6 @@ img {
   width: 100px;
   outline: 5px solid var(--clr-primary-duskBlack);
   border-radius: 50%;
-  align-self: center;
   margin-right: 0.7em;
 }
 
@@ -120,7 +119,8 @@ main container right style
 */
 
 .github__container--right {
-  padding: 2em 2em;
+  padding: 0.5em 0.5em;
+  margin-top: 2em;
 }
 
 .github__user--display {
@@ -141,4 +141,40 @@ main container right style
 }
 
 @media screen and (min-width: 850px) {
+  body {
+    background-color: var(--clr-primary-duskBlack);
+    align-items: center;
+    justify-content: center;
+  }
+
+  img {
+    align-self: center;
+  }
+
+  main {
+    flex-flow: row;
+    height: 90vh;
+    width: 85vw;
+  }
+
+  .github__container--left {
+    width: 45%;
+    height: 450px;
+  }
+
+  .github__container--right {
+    width: 55%;
+  }
+
+  .github__user--display {
+    height: max-content;
+    /* padding: 0 4em 0 0; */
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  main {
+    height: 80vh;
+    width: 60vw;
+  }
 }
