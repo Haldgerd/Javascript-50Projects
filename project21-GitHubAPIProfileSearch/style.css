@@ -9,7 +9,7 @@ variables
   --clr-primary-dullRed: hsl(0, 83%, 60%);
   --clr-primary-pureWhite: hsl(0, 83%, 100%);
   --fs-h1: 5rem;
-  --fs-h2: 1.5rem;
+  --fs-h2: 1.75rem;
   --fs-h3: 1.1rem;
   --fs-secondary: 0.75rem;
   --padding-h1: 0.3em 0 0 0;
@@ -43,6 +43,19 @@ main,
   display: flex;
 }
 
+a {
+  text-decoration: none;
+  color: var(--clr-primary-dullRed);
+  background-color: var(--clr-primary-dullRed);
+  padding: 0.3em;
+  color: var(--clr-primary-pureWhite);
+  text-align: center;
+}
+
+a + a {
+  margin-left: 0.95em;
+}
+
 body {
   min-height: 100vh;
   /* background-color: var(--clr-primary-dullRed); */
@@ -58,7 +71,7 @@ i {
 
 input[type="text"] {
   border: none;
-  width: 70%;
+  width: 40%;
   padding: var(--padding-input);
   margin-top: var(--margin-input);
 }
@@ -127,6 +140,7 @@ main container right style
   background-color: var(--clr-primary-duskBlack);
   width: 100%;
   padding: 1em 1em;
+  border-radius: 15px;
 }
 
 .github__user__reputation {
@@ -154,27 +168,57 @@ main container right style
   main {
     flex-flow: row;
     height: 90vh;
-    width: 85vw;
+    width: 95vw;
+  }
+
+  input[type="text"] {
+    width: 70%;
   }
 
   .github__container--left {
     width: 45%;
-    height: 450px;
+    height: 500px;
   }
 
   .github__container--right {
     width: 55%;
+    margin-top: 0.5em;
   }
 
   .github__user--display {
     height: max-content;
     /* padding: 0 4em 0 0; */
+    transform: translateY(75%);
   }
 }
 
-@media screen and (min-width: 1400px) {
+@media screen and (min-width: 1100px) {
+  main {
+    height: 85vh;
+    width: 70vw;
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  main {
+    height: 85vh;
+    width: 60vw;
+  }
+
+  .github__container--left {
+    width: 50%;
+    height: 550px;
+  }
+}
+
+@media screen and (min-width: 1500px) {
   main {
     height: 80vh;
-    width: 60vw;
+    width: 55vw;
+  }
+
+  .github__container--left {
+    width: 50%;
+    height: 550px;
   }
 }
