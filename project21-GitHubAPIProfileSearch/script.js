@@ -38,15 +38,19 @@ userForm.addEventListener("submit", (e) => {
   const user = userInput.value;
 
   if(user) {
+
   // function to search and display user
     getUser(user);
-    
+
+  // function to retrieve and display repositories
+    getRepos(user);
+   
     userInput.value = "";
 
   } else {
 
     displayErrorMsg("No input given!");
-}
+  }
 });
 
 
@@ -93,12 +97,13 @@ function createUserDisplay(user) {
       <p class="github__user__following">FOLLOWING:${user.following}</p>
       <p class="github__user__repositiories">REPOSITORIES:${user.public_repos}</p>
     </div>
-    <div class="repositiories__links"></div>
+    <div class="repositories__links"></div>
   </div>
   </div>`;
 
   userDisplay.innerHTML = userCard;
 }
+
 
 // main handler function
 /**
@@ -132,3 +137,40 @@ function getUser(username) {
 //     console.log(err);
 //   }
 // }
+
+
+// fetch repositories
+/**
+ * Fetches repositories from github API, for requested profile.
+ * 
+ * @param {*} username User input, string.
+ */
+function getRepos(username) {
+
+  axios.get(rootURL + username + "/repos")
+  // handle success
+  .then(res => createReposDisplay(res.data))
+
+  .catch(() => displayErrorMsg("Problem fetching repos!"))
+
+  .then(() => console.log("getting repos"));
+}
+
+/**
+ * Uses retrieved data fetched with axios and displays it in the browser.
+ * 
+ * @param {*} repos Retrieved array of objects-repositories of requested user profile 
+ */
+function createReposDisplay(repos) {
+
+  const repositoriesLinks = document.querySelector(".repositories__links");
+
+  repos.forEach((repo, index) => {
+
+    if (index < 5) {
+
+      console.log(repo.name);
+      repositoriesLinks.innerHTML += `<a href=${repos[index].html_url} class="repository" target="_blank">${repos[index].name}</a>`
+    }
+  });
+}
