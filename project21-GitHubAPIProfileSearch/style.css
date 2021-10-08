@@ -20,6 +20,7 @@ variables
   --padding-input: 0.75em;
   --margin-input: 1.75em;
   scrollbar-color: var(--clr-primary-dullRed) var(--clr-primary-pureWhite);
+  /* scrollbar customization works for me only if I place scrollbar-color inside root. FOR FIREFOX*/
 }
 
 /*
@@ -36,7 +37,7 @@ general
   padding: 0;
 }
 
-/* scrollbar customization */
+/* scrollbar customization CHROME*/
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -51,6 +52,7 @@ general
   background: var(--clr-primary-dullRed);
   border-radius: 50px;
 }
+/* end scrollbar customization */
 
 body,
 main,
