@@ -147,7 +147,8 @@ function getUser(username) {
  */
 function getRepos(username) {
 
-  axios.get(rootURL + username + "/repos")
+  axios.get(rootURL + username + "/repos?sort=created")
+  // ?sort=created gets the last repositories created.
   // handle success
   .then(res => createReposDisplay(res.data))
 
