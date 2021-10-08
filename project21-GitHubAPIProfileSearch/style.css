@@ -19,6 +19,7 @@ variables
   --padding-container-right: 1em;
   --padding-input: 0.75em;
   --margin-input: 1.75em;
+  scrollbar-color: var(--clr-primary-dullRed) var(--clr-primary-pureWhite);
 }
 
 /*
@@ -33,6 +34,22 @@ general
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+/* scrollbar customization */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--clr-primary-pureWhite);
+  border-radius: 50px;
+  margin-block: 0.5em;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--clr-primary-dullRed);
+  border-radius: 50px;
 }
 
 body,
@@ -195,7 +212,7 @@ main container right style
 @media screen and (min-width: 1100px) {
   main {
     height: 85vh;
-    width: 70vw;
+    width: 75vw;
   }
 }
 
