@@ -28,18 +28,21 @@
         <div class="github__icon"><i class="fab fa-github"></i></div>
         <h1 class="github__title">Git<span class="red">HUB</span></h1>
         <h2 class="github__subtitle">profile search</h2>
-        <input
-          type="text"
-          name=""
-          id=""
-          placeholder="search GitHUB profile"
-          autofocus
-        />
+        <form action="" class="form__container">
+          <input
+            type="text"
+            name=""
+            id=""
+            placeholder="search GitHUB profile"
+            autofocus
+          />
+        </form>
+        <p class="error__text"></p>
       </div>
 
       <div class="github__container--right">
         <!-- added dynamicaly -->
-        <div class="github__user--display">
+        <!-- <div class="github__user--display">
           <img
             src="./images/circle-cropped(2).png"
             alt=""
@@ -62,8 +65,10 @@
               ><a href="" class="repository">repo4</a>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
     </main>
+    <!-- AXIOS CDN link -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   </body>
 </html>
