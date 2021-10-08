@@ -45,13 +45,24 @@ userForm.addEventListener("submit", (e) => {
 
   } else {
 
-    errorText.textContent = "Not found! || No input given!";
-
-    setInterval(() => {
-      errorText.innerHTML = "";
-    }, 3000);
-  }
+    displayErrorMsg("No input given!");
+}
 });
+
+
+/**
+ * Displays error message and removes it at certain period of time.
+ * 
+ * @param {*} msg String, message to be displayed to user at error event
+ */
+function displayErrorMsg(msg) {
+
+  errorText.textContent = msg;
+
+  setInterval(() => {
+    errorText.innerHTML = "";
+  }, 3000);
+}
 
 
 /**
@@ -86,11 +97,10 @@ function createUserDisplay(user) {
   </div>
   </div>`;
 
-
   userDisplay.innerHTML = userCard;
 }
 
-
+// main handler function
 /**
  * Uses axios to parse and retrieve gihub user data (using common .then promise).
  * 
@@ -103,7 +113,11 @@ function getUser(username) {
     // handle success
     .then(res => createUserDisplay(res.data))
     // catch any errors
-    .catch(err => console.log(err))
+    .catch(err => {
+      if (err.response.status == 404) {
+        displayErrorMsg("404 No user found!")
+      }
+    })
     // function that is always executed
     .then(console.log("you've done it. This executes faster because success handler needs to fetch the data."));
 }
