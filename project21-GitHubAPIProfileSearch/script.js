@@ -45,11 +45,11 @@ userForm.addEventListener("submit", (e) => {
 
   } else {
 
-    errorText.textContent = "No input given!";
+    errorText.textContent = "Not found! || No input given!";
 
     setInterval(() => {
       errorText.innerHTML = "";
-    }, 1500);
+    }, 3000);
   }
 });
 
@@ -60,29 +60,29 @@ userForm.addEventListener("submit", (e) => {
  * @param {*} user User data retrieved through axios.
  */
 function createUserDisplay(user) {
+
+  const userName = (user.name) ? user.name : user.login;
+
+  const userDescription = (user.bio) ? user.bio : "No description given."
+
   const userCard = `
   <div class="github__user--display">
     <img
-      src="./images/circle-cropped(2).png"
+      src=${user.avatar_url}
       alt=""
       class="github__user__image"
     />
   <div class="github__user__information">
-    <h3 class="github__user__name">Lorna Mally</h3>
+    <h3 class="github__user__name">${userName}</h3>
     <p class="github__user__description">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum
-      repellendus neque perferendis sapiente earum? Odit sint hic ab ut.
+      ${userDescription}
     </p>
     <div class="github__user__reputation">
-      <p class="githu__user__followers">FOLLOWERS:10</p>
-      <p class="github__user__following">FOLLOWING:6</p>
-      <p class="github__user__repositiories">REPOSITORIES:10</p>
+      <p class="githu__user__followers">FOLLOWERS:${user.followers}</p>
+      <p class="github__user__following">FOLLOWING:${user.following}</p>
+      <p class="github__user__repositiories">REPOSITORIES:${user.public_repos}</p>
     </div>
-    <div class="repositiories__links">
-      <a href="" class="repository">repo2</a
-      ><a href="" class="repository">repo3</a
-      ><a href="" class="repository">repo4</a>
-    </div>
+    <div class="repositiories__links"></div>
   </div>
   </div>`;
 

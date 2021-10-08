@@ -1,3 +1,5 @@
+/* TODO: change the display of user card on bigger screens, change layout on smaller-mobile screens */
+
 /*
 ===========
 variables
@@ -90,7 +92,7 @@ i {
 
 input[type="text"] {
   border: none;
-  width: 40%;
+  width: 60%;
   padding: var(--padding-input);
   margin-top: var(--margin-input);
 }
@@ -126,6 +128,7 @@ h3 {
 main {
   flex-flow: column;
   background-color: var(--clr-primary-dullRed);
+  width: 100%;
 }
 
 span {
@@ -142,6 +145,7 @@ main container left style
   background-color: var(--clr-primary-duskBlack);
   text-align: center;
   padding: var(--padding-container-left);
+  height: 50%;
 }
 
 /*
@@ -229,14 +233,14 @@ main container right style
 @media screen and (min-width: 1100px) {
   main {
     height: 85vh;
-    width: 75vw;
+    width: 78vw;
   }
 }
 
 @media screen and (min-width: 1300px) {
   main {
     height: 85vh;
-    width: 60vw;
+    width: 65vw;
   }
 
   .github__container--left {
