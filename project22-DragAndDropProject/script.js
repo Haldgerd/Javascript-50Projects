@@ -8,13 +8,15 @@ dragableImage.addEventListener("dragstart", (e)=> {
   // actions on drag target
   dragableImage.style.opacity = "0.6";
   dragableImage.style.border = "3px solid white";
-  // dragableImage.classList.add("drag--active");
+
+  setTimeout(() => dragableImage.className = "invisible", 0); 
 });
 
 dragableImage.addEventListener("dragend", ()=> {
   dragableImage.style.opacity = "";
   dragableImage.style.border = "";
   // setTimeout(() => dragableImage.classList.remove("drag--active"), 10);
+  dragableImage.classList.add("image__container--active");
 });
 
 
