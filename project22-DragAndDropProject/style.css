@@ -52,8 +52,8 @@ image container styles
 */
 
 .image__container {
-  height: clamp(130px, 5vw, 500px);
-  width: clamp(130px, 5vw, 500px);
+  height: clamp(110px, 6vw, 700px);
+  width: clamp(110px, 6vw, 700px);
   background-color: var(--clr-primary-dirtyWhite);
   border: 2px solid var(--clr-primary-black);
   transition: var(--transition-containers);
@@ -67,4 +67,22 @@ image container styles
   background-color: var(--clr-primary-black);
   border: 2px dashed var(--clr-primary-dirtyWhite);
   transition: var(--transition-containers);
+}
+
+/*
+================
+media query styles
+================
+*/
+
+@media screen and (min-width: 900px) {
+  main {
+    flex-wrap: no-wrap;
+    flex-flow: row;
+  }
+
+  .image__container + .image__container {
+    margin-top: 0;
+    margin-left: 0.75em;
+  }
 }
