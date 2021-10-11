@@ -1,0 +1,70 @@
+/*
+==============
+variables
+==============
+*/
+
+:root {
+  --clr-primary-duskYellow: hsl(51, 100%, 50%);
+  --clr-primary-black: hsl(0, 7%, 11%);
+  --clr-primary-dirtyWhite: hsl(0, 6%, 90%);
+  --ff-primary: monospace;
+  --transition-containers: 0.3s ease;
+  --padding-body: 0.5em;
+}
+
+/*
+================
+general styles
+================
+*/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body,
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--clr-primary-duskYellow);
+  padding: var(--padding-body);
+}
+
+main {
+  flex-wrap: wrap;
+  flex-flow: column;
+}
+
+/*
+================
+image container styles
+================
+*/
+
+.image__container {
+  height: clamp(130px, 5vw, 500px);
+  width: clamp(130px, 5vw, 500px);
+  background-color: var(--clr-primary-dirtyWhite);
+  border: 2px solid var(--clr-primary-black);
+  transition: var(--transition-containers);
+}
+
+.image__container + .image__container {
+  margin-top: 0.75em;
+}
+
+.image__container.hover--active {
+  background-color: var(--clr-primary-black);
+  border: 2px dashed var(--clr-primary-dirtyWhite);
+  transition: var(--transition-containers);
+}
