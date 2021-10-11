@@ -63,6 +63,7 @@ image container styles
   margin-top: 0.75em;
 }
 
+/* class added at drag enter - for drop containers */
 .image__container.hover--active {
   background-color: var(--clr-primary-black);
   border: 2px dashed var(--clr-primary-dirtyWhite);
@@ -80,6 +81,11 @@ image container--active styles
   height: clamp(106px, 6vw, 700px);
   width: clamp(106px, 6vw, 700px);
   background-size: contain;
+}
+
+/* attempt to remove background from drop container when drag starts. */
+.image__container--active.drag--active {
+  background-image: none;
 }
 
 /*
