@@ -71,6 +71,19 @@ image container styles
 
 /*
 ================
+image container--active styles
+================
+*/
+
+.image__container--active {
+  background-image: url("./images/screen_lornas.jpg");
+  height: clamp(106px, 6vw, 700px);
+  width: clamp(106px, 6vw, 700px);
+  background-size: contain;
+}
+
+/*
+================
 media query styles
 ================
 */
@@ -84,5 +97,13 @@ media query styles
   .image__container + .image__container {
     margin-top: 0;
     margin-left: 0.75em;
+  }
+
+  .image__container--active {
+    background-image: url("./images/screen_lornas.jpg");
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: contain;
   }
 }
