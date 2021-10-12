@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- javascript -->
+    <script src="script.js" defer></script>
+
+    <title>Three way checkboxes</title>
+  </head>
+  <body>
+    <main class="content__container">
+      <h2 class="content__title">
+        How would you like your <span class="content--color">project</span> to
+        be handled?
+      </h2>
+      <div class="checkbox__container">
+        <input
+          type="checkbox"
+          id="good"
+          name="project__method"
+          class="checkbox__input good"
+        />
+        <label for="good" class="checkbox__label">Good</label>
+      </div>
+      <div class="checkbox__container">
+        <input
+          type="checkbox"
+          id="cheap"
+          name="project__method"
+          class="checkbox__input good"
+        />
+        <label for="cheap" class="checkbox__label">Cheap</label>
+      </div>
+      <div class="checkbox__container">
+        <input
+          type="checkbox"
+          id="fast"
+          name="project__method"
+          class="checkbox__input fast"
+        />
+        <label for="fast" class="checkbox__label">Fast</label>
+      </div>
+    </main>
+  </body>
+</html>

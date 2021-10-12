@@ -1,0 +1,57 @@
+/*
+================
+variables
+================
+*/
+:root {
+  --clr-primary-duskBlack: hsl(67, 7%, 21%);
+  --clr-primary-dirtyWhite: hsl(0, 13%, 86%);
+  --clr-primary-magnolia: hsl(340, 84%, 32%);
+  --clr-primary-lightMagenta: hsl(342, 68%, 52%);
+  --fs-h2: 2rem;
+  --fs-label: 1.15rem;
+  --margin-h2: 0 0 1em 0;
+}
+
+/*
+============
+general
+============
+*/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: var(--clr-primary-dirtyWhite);
+  min-height: 100vh;
+  background-color: var(--clr-primary-duskBlack);
+}
+
+main {
+  width: clamp(300px, 40%, 700px);
+}
+
+h2 {
+  margin: var(--margin-h2);
+  text-transform: uppercase;
+  font-size: var(--fs-h2);
+}
+
+span {
+  color: var(--clr-primary-lightMagenta);
+}
+
+label {
+  text-transform: uppercase;
+  font-size: var(--fs-label);
+}
