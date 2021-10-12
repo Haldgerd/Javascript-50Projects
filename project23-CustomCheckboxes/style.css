@@ -8,9 +8,14 @@ variables
   --clr-primary-dirtyWhite: hsl(0, 13%, 86%);
   --clr-primary-magnolia: hsl(340, 84%, 32%);
   --clr-primary-lightMagenta: hsl(342, 68%, 52%);
+  --clr-primary-lightYellow: hsl(59, 100%, 51%);
   --fs-h2: 2rem;
   --fs-label: 1.15rem;
-  --margin-h2: 0 0 1em 0;
+  --margin-h2: 0 0 1.75em 0;
+  --margin-checkboxContainer: 1.8em 0;
+  --margin-checkbox: 1.75em;
+  --transition-checkboxBg: 0.3s ease-out;
+  --transition-labelText: 0.3s linear;
 }
 
 /*
@@ -52,6 +57,101 @@ span {
 }
 
 label {
+  background-color: var(--clr-primary-lightMagenta);
+  width: 80px;
+  height: 35px;
+  border-radius: 50px;
+  margin-right: var(--margin-checkbox);
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  transition: var(--transition-checkboxBg);
+}
+
+/*
+============
+checkbox container style
+============
+*/
+
+.checkbox__container {
+  display: flex;
+  width: 200px;
+  margin: var(--margin-checkboxContainer);
+  align-items: center;
+}
+
+/* hide the default checkbox style */
+.checkbox__input {
+  visibility: hidden;
+}
+
+/* change bg color of label on checked */
+.checkbox__input:checked + label {
+  background-color: var(--clr-primary-lightYellow);
+  transition: var(--transition-checkboxBg);
+}
+
+/* animate ball toggle on checkbox checked */
+.checkbox__input:checked + .checkbox__label .ball {
+  animation: check 0.3s linear forwards;
+  background-color: var(--clr-primary-lightMagenta);
+  transition: var(--transition-checkboxBg);
+}
+
+.checkbox__input:checked ~ .label__text {
+  transform: scale(1.3);
+  color: var(--clr-primary-lightMagenta);
+  transition: var(--transition-labelText);
+}
+
+/*
+============
+checkbox ball style
+============
+*/
+
+.ball {
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  background-color: var(--clr-primary-dirtyWhite);
+  height: 30px;
+  width: 30px;
+  border-radius: 50px;
+  transition: var(--transition-checkboxBg);
+  animation: uncheck 0.3s linear forwards;
+}
+
+/*
+============
+label span - text style
+============
+*/
+
+.label__text {
+  display: inline;
+  color: var(--clr-primary-dirtyWhite);
   text-transform: uppercase;
   font-size: var(--fs-label);
+  transition: var(--transition-labelText);
+}
+
+/* TODO: CHECK ROTATION AS WELL */
+@keyframes uncheck {
+  0% {
+    transform: translateX(46px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes check {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(46px);
+  }
 }
