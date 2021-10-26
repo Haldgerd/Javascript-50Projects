@@ -1,0 +1,65 @@
+/* general */
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+main, body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body {
+  min-height: 100vh;
+}
+
+.jokes__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  border: none;
+  background-color: #3d3dbd;
+  color: white;
+  padding: 1em 1.5em;
+  border-radius: 50px;
+  text-transform: uppercase;
+  font-family: monospace;
+}
+
+/* general styles*/
+body {
+  background-color: #3d3dbd;
+  color: white;
+}
+
+main {
+  background-color: yellow;
+  color: #3d3dbd;
+  padding: 2em;
+  width: clamp(500px, 50%, 600px);
+}
+
+.jokes__container {
+  flex-flow: column;
+}
+.jokes__container h1 {
+  font-size: 2.5rem;
+}
+.jokes__container .joke__container {
+  padding: 1.75em 0 2em 0;
+  font-size: 1.25rem;
+  text-align: center;
+}
+
+button {
+  width: 40%;
+}
+
+/*# sourceMappingURL=style.css.map */

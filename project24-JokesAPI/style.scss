@@ -1,0 +1,70 @@
+//import _base scss file
+@use "../../../SCSS-partials/base";
+
+// variables 
+$clr-primary-Muddyblue: hsl(240, 51%, 49%);
+$clr-primary-yellow: hsl(60, 100%, 50%);
+$clr-primary-pureWhite: hsl(0, 0%, 100%);
+$font-family: monospace;
+$font-size-h1: 2.5rem;
+$padding-main: 2em;
+$padding-joke-container: 1.75em 0 2em 0;
+$padding-btn: 1em 1.5em;
+$margin-elements: 1em;
+
+// extends
+%layout-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+%button-style {
+  border: none;
+  background-color: $clr-primary-Muddyblue;
+  color: $clr-primary-pureWhite;
+  padding: $padding-btn;
+  border-radius: 50px;
+  text-transform: uppercase;
+  font-family: $font-family;
+}
+
+//mixin
+@mixin theme($theme: $clr-primary-Muddyblue, $color: $clr-primary-pureWhite) {
+  background-color: $theme;
+  color: $color;
+}
+
+
+//general styles
+/* general styles*/
+
+body {
+  @include theme;
+}
+
+ main {
+  @include theme($theme: $clr-primary-yellow, $color: $clr-primary-Muddyblue);
+  padding: $padding-main;
+  width: clamp(500px, 50%, 600px);
+}
+ 
+.jokes__container {
+  @extend %layout-flex;
+  flex-flow: column;
+
+  h1 {
+    font-size: $font-size-h1;
+  }
+
+  .joke__container {
+    padding: $padding-joke-container;
+    font-size: 1.25rem;
+    text-align: center;
+  }
+}
+
+button {
+  @extend %button-style;
+  width: 40%;
+}
