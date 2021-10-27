@@ -17,6 +17,9 @@ button.addEventListener("click", () => {
   
 });
 
+/**
+ * Returns requested data from API.
+ */
 function getData() {
 // to fetch data from API that requires some sort of authorization - in our case needs headers syntax below
 
