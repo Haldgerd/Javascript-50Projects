@@ -18,7 +18,7 @@ button.addEventListener("click", () => {
 });
 
 function getData() {
-// to fetch data from API that requires some sort of authorization - in our case header use syntax below
+// to fetch data from API that requires some sort of authorization - in our case needs headers syntax below
 
   const config = {
     //headers need to be lowercase , accept wihtout quotes.
@@ -27,7 +27,7 @@ function getData() {
     },
   }
 
-  fetch(jokeURL, config)
+  fetch(jokeURL, config) //place needed info into config - second argument.
     .then((response) => response.json())
     // .catch(new Error("Error occured fetching the data."))
     .then((data) => {
