@@ -40,7 +40,7 @@ new Promise((resolve, reject) => {
   }}, 2000)
 }) 
   .then(
-    result => console.log(result)
+    result => console.log(result * 2)
   )
   .catch(
     error => console.log(error.message))
@@ -48,7 +48,6 @@ new Promise((resolve, reject) => {
 
 // THIRD method is to place promise inside a function a return it => return new Promise ...
 // calling results from promise in this case is equal to the first methos in this file.
-
 
 
 
@@ -79,3 +78,15 @@ new Promise((resolve, reject) => {
 // }).catch (
 //   error => console.log(error.name, error.message)
 // );
+
+
+new Promise(function(resolve, reject) {
+  setTimeout(() => resolve(1), 1000); // (*)  
+  
+  }).then((result) => result * 8
+
+  ).then((result) => console.log(result)
+
+  ).catch (
+    error => console.log(error.name, error.message)
+  );
