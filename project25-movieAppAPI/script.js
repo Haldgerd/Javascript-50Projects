@@ -9,7 +9,8 @@ let promise = new Promise((resolve, reject) => {
   if (!a) {
     reject(new Error("This is an error"));// creates error object which consists of message : This is an error.
   } else {
-    resolve("Open");
+    let sum = 4 * 5;
+    resolve(sum);
   }
 });
 
@@ -17,7 +18,10 @@ let promise = new Promise((resolve, reject) => {
 //this are the "fans" waiting on a promise :)
 // consuming functions => taking results from promise constructor are registered using .then, .catch, .finally methods (functions!).
 promise.then(
-  result => console.log(`This is the ${result}.`),
+  result => {
+    result = result * 5;
+    console.log(`This is the ${result}.`);
+  },
   error => console.log(error.message) // error refers to error object
 ).then( // both last .then and .finally run imediatly, while upper .then takes it's time to resolve the task - if it took less to time to complete then lower .then => then it's result would have been displayed first.
   console.log("This is messy AF")
