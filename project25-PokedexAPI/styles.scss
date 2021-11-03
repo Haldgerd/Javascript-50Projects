@@ -1,3 +1,4 @@
+/* font face file */
 @font-face {
   font-family: 'pokemon_solidnormal';
   src: url('./fonts/pokemon_solid-webfont.woff2') format('woff2'),
@@ -7,7 +8,11 @@
 
 }
 
+
+//variables
+
 $color-primary-pureWhite: hsl(0, 0%, 100%);
+$color-primary-darkChocolate: hsl(27, 75%, 28%);
 $color-gradient-smokeYellow: hsl(29, 65%, 67%);
 $color-gradient-pastelPeach: hsl(41, 80%, 77%);
 $header-padding: 2.5em;
@@ -15,6 +20,8 @@ $main-padding: 0 0 3em 0;
 $h1-ff-size: clamp(50px, 5vw, 300px);
 $ff-primary: "pokemon_solidnormal";
 
+
+//extends
 
 %layout-shared {
   display: flex;
@@ -53,10 +60,10 @@ body {
   }
 }
 
+
 main {
   @extend %layout-shared;
   margin: auto;
-  // background-color: white;
   width: 70vw;
   padding: $main-padding;
 
@@ -67,6 +74,55 @@ main {
     border-radius: 15px;
     margin-top: 1.5em;
     margin-left: 1.5em;
+    color: $color-primary-pureWhite;
+
+    h2 {
+      text-transform: uppercase;
+      font-size: 1.5rem;
+    }
+
+    p {
+      font-family: monospace;
+      margin-top: 0.85em;
+    }
+  }
+}
+
+.pokedex__card {
+
+  @extend %layout-shared;
+  flex-flow: column;
+
+  .image__container {
+    border-radius: 50%;
+    background-color: $color-primary-pureWhite;
+    width: 170px;
+    height: 170px;
   }
 
+  span {
+    display: inline-block;
+    text-align: center;
+    font-size: .95rem;
+    font-family: monospace;
+    color: $color-primary-darkChocolate;
+    border-radius: 10px;
+    margin: .5em 0;
+    padding: 0.3em;
+    background-color: $color-gradient-pastelPeach;
+  }
+}
+
+
+.green {
+  background-color: hsl(120, 62%, 75%);
+}
+
+
+.red {
+  background-color: hsl(0, 55%, 37%);
+}
+
+.yellow {
+  background-color: hsl(46, 81%, 50%);
 }
