@@ -5,8 +5,9 @@
        url('./fonts/pokemon_solid-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
-
 }
+
+//NOTE TO SELF: TRY NOT TO REPEAT YOURSELF TOO MUCH WITH SAME PROPERTIES. Use variables instead.!!!!!!!
 
 
 //variables
@@ -68,13 +69,39 @@ main {
   padding: $main-padding;
 
   .pokedex__card {
+    @extend %layout-shared;
     height: 300px;
     width: 200px;
-    background-color: grey;
+    background-color: hsl(120, 28%, 62%);
     border-radius: 15px;
     margin-top: 1.5em;
     margin-left: 1.5em;
     color: $color-primary-pureWhite;
+    flex-flow: column;
+
+    .image__container {
+      @extend %layout-shared;
+      border-radius: 50%;
+      background-color: $color-primary-pureWhite;
+      width: 110px;
+      height: 110px;
+    }
+
+    .pokemon__image {
+      display: inline-block;
+    }
+
+    span {
+      display: inline-block;
+      text-align: center;
+      font-size: .95rem;
+      font-family: monospace;
+      color: $color-primary-darkChocolate;
+      border-radius: 10px;
+      margin: .5em 0;
+      padding: 0.3em;
+      background-color: $color-gradient-pastelPeach;
+    }   
 
     h2 {
       text-transform: uppercase;
@@ -86,43 +113,4 @@ main {
       margin-top: 0.85em;
     }
   }
-}
-
-.pokedex__card {
-
-  @extend %layout-shared;
-  flex-flow: column;
-
-  .image__container {
-    border-radius: 50%;
-    background-color: $color-primary-pureWhite;
-    width: 170px;
-    height: 170px;
-  }
-
-  span {
-    display: inline-block;
-    text-align: center;
-    font-size: .95rem;
-    font-family: monospace;
-    color: $color-primary-darkChocolate;
-    border-radius: 10px;
-    margin: .5em 0;
-    padding: 0.3em;
-    background-color: $color-gradient-pastelPeach;
-  }
-}
-
-
-.green {
-  background-color: hsl(120, 62%, 75%);
-}
-
-
-.red {
-  background-color: hsl(0, 55%, 37%);
-}
-
-.yellow {
-  background-color: hsl(46, 81%, 50%);
 }
