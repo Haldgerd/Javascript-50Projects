@@ -1,7 +1,19 @@
-$color-primary-duskBlack: hsl(0, 3%, 14%);
-$color-gradient-smokeYellow: hsl(51, 100%, 50%);
-$color-gradient-pastelGreen: hsl(147, 45%, 68%);
-$color-gradient-softPurple: hsl(256, 77%, 68%);
+@font-face {
+  font-family: 'pokemon_solidnormal';
+  src: url('./fonts/pokemon_solid-webfont.woff2') format('woff2'),
+       url('./fonts/pokemon_solid-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+$color-primary-pureWhite: hsl(0, 0%, 100%);
+$color-gradient-smokeYellow: hsl(29, 65%, 67%);
+$color-gradient-pastelPeach: hsl(41, 80%, 77%);
+$header-padding: 2.5em;
+$main-padding: 0 0 3em 0;
+$h1-ff-size: clamp(50px, 5vw, 300px);
+$ff-primary: "pokemon_solidnormal";
 
 
 %layout-shared {
@@ -23,10 +35,38 @@ $color-gradient-softPurple: hsl(256, 77%, 68%);
 }
 
 body {
+  text-align: center;
   min-height: 100vh;
-  background: linear-gradient(to left top, $color-gradient-smokeYellow 60%, $color-gradient-pastelGreen, $color-gradient-softPurple);
+  background: linear-gradient($color-gradient-smokeYellow 40%, $color-gradient-pastelPeach 60%);
+  background-repeat: no-repeat;
+  background-size: cover; //there is a problem with this !! SOLVED: main had fixed height! 
+  font-family: $ff-primary;
 
   header {
-    color: $color-primary-duskBlack;
+    color: $color-primary-pureWhite;
+    padding: $header-padding;
+
+    h1 {
+      text-transform: uppercase;
+      font-size: $h1-ff-size;
+    }
   }
+}
+
+main {
+  @extend %layout-shared;
+  margin: auto;
+  // background-color: white;
+  width: 70vw;
+  padding: $main-padding;
+
+  .pokedex__card {
+    height: 300px;
+    width: 200px;
+    background-color: grey;
+    border-radius: 15px;
+    margin-top: 1.5em;
+    margin-left: 1.5em;
+  }
+
 }

@@ -1,3 +1,16 @@
+@font-face {
+  font-family: "pokemon_solidnormal";
+  src: url("./fonts/pokemon_solid-webfont.woff2") format("woff2"), url("./fonts/pokemon_solid-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: row wrap;
+}
+
 /*general styles */
 *,
 *::after,
@@ -8,11 +21,34 @@
 }
 
 body {
+  text-align: center;
   min-height: 100vh;
-  background: linear-gradient(to left top, #ffd900 60%, #89d2aa, #906fec);
+  background: linear-gradient(#e2a974 40%, #f3d695 60%);
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: "pokemon_solidnormal";
 }
 body header {
-  color: #252323;
+  color: white;
+  padding: 2.5em;
+}
+body header h1 {
+  text-transform: uppercase;
+  font-size: clamp(50px, 5vw, 300px);
+}
+
+main {
+  margin: auto;
+  width: 70vw;
+  padding: 0 0 3em 0;
+}
+main .pokedex__card {
+  height: 300px;
+  width: 200px;
+  background-color: grey;
+  border-radius: 15px;
+  margin-top: 1.5em;
+  margin-left: 1.5em;
 }
 
 /*# sourceMappingURL=style.css.map */
