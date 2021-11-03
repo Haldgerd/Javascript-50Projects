@@ -1,0 +1,32 @@
+$color-primary-duskBlack: hsl(0, 3%, 14%);
+$color-gradient-smokeYellow: hsl(51, 100%, 50%);
+$color-gradient-pastelGreen: hsl(147, 45%, 68%);
+$color-gradient-softPurple: hsl(256, 77%, 68%);
+
+
+%layout-shared {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: row wrap;
+}
+
+
+/*general styles */
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(to left top, $color-gradient-smokeYellow 60%, $color-gradient-pastelGreen, $color-gradient-softPurple);
+
+  header {
+    color: $color-primary-duskBlack;
+  }
+}

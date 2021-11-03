@@ -1,0 +1,18 @@
+/*general styles */
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(to left top, #ffd900 60%, #89d2aa, #906fec);
+}
+body header {
+  color: #252323;
+}
+
+/*# sourceMappingURL=style.css.map */
