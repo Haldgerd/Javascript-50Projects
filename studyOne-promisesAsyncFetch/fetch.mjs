@@ -1,4 +1,4 @@
-import fetch from "node-fetch"; // raised an error
+import fetch from "node-fetch"; // raised an error - LOOK SOLUTIONS for solution.
 
 // fetching from API using promises ERROR!
 // node does not implement fetch API natively, you need to INSTALL FETCH package it in your Node application like this
@@ -18,7 +18,8 @@ import fetch from "node-fetch"; // raised an error
 
 
 // method one: fetch inside a regular function.
-const apiURL = "https://api.jokes.one/jod";
+// const apiURL = "https://api.jokes.one/jod";
+const apiURL = " ";
 
 // const getData = () => fetch(apiURL);
 
@@ -64,4 +65,6 @@ let response = await fetch(url);
 
 let commits = await response.json(); // read response body and parse as JSON
 
-console.log(commits[0].author.login);
+let userName = commits[0].author.login;
+
+console.log(userName);
