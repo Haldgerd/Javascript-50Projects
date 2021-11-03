@@ -1,11 +1,8 @@
-// syntax that allows us to work with prmises in a more elegant fashion.
-
-let url = "http://something-unknown.si";
+// syntax that allows us to work with promises in a more elegant fashion.
 
 
 // async keyword placed in front of a function means: FUNCTION ALWAYS RETURNS A PROMISE.
 async function testing () {
-
   const value = true;
 
   if (value) {
@@ -20,4 +17,5 @@ async function testing () {
 testing()
   .then(resolve => console.log(resolve))
   .catch(error => console.log(error.name));
+
 
