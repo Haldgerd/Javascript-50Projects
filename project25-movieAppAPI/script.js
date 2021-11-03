@@ -30,7 +30,8 @@ promise.then(
   console.log("This runs anyway.")
 );
 
-
+// testing resolve flow
+console.log(`Another outside code that produces ${3 * 4} number.`);
 
 
 // without assignment and  without separate "consumers" call. It's all wrapped together.
