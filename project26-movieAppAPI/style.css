@@ -20,6 +20,7 @@ body {
 
 main {
   flex-wrap: wrap;
+  justify-content: space-evenly;
   padding: 2em;
   /* select all movie cards and apply margin except the last child in the group of siblings. */
 }
@@ -29,8 +30,7 @@ main .movie__card {
   color: white;
   height: 300px;
   width: 200px;
-  margin-top: 1em;
-  margin-left: 1em;
+  margin-top: 2em;
 }
 
 nav {
