@@ -12,8 +12,8 @@
 
 //variables
 
-$color-primary-pureWhite: hsl(0, 0%, 100%);
-$color-primary-darkChocolate: hsl(27, 75%, 28%);
+$color-primary-pureBiege: hsl(36, 63%, 85%);
+$color-primary-darkChocolate: rgb(68, 61, 61);
 $color-gradient-smokeYellow: hsl(29, 65%, 67%);
 $color-gradient-pastelPeach: hsl(41, 80%, 77%);
 $header-padding: 2.5em;
@@ -51,7 +51,7 @@ body {
   font-family: $ff-primary;
 
   header {
-    color: $color-primary-pureWhite;
+    color: $color-primary-pureBiege;
     padding: $header-padding;
 
     h1 {
@@ -72,17 +72,17 @@ main {
     @extend %layout-shared;
     height: 300px;
     width: 200px;
-    background-color: hsl(120, 28%, 62%);
     border-radius: 15px;
     margin-top: 1.5em;
     margin-left: 1.5em;
-    color: $color-primary-pureWhite;
+    color: $color-primary-darkChocolate;
     flex-flow: column;
+    box-shadow: 2px 3px 5px $color-primary-darkChocolate;
 
     .image__container {
       @extend %layout-shared;
       border-radius: 50%;
-      background-color: $color-primary-pureWhite;
+      background-color: $color-primary-pureBiege;
       width: 110px;
       height: 110px;
     }
@@ -96,7 +96,6 @@ main {
       text-align: center;
       font-size: .95rem;
       font-family: monospace;
-      color: $color-primary-darkChocolate;
       border-radius: 10px;
       margin: .5em 0;
       padding: 0.3em;
