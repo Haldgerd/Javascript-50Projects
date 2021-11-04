@@ -16,15 +16,17 @@ $color-primary-averageScore: hsl(23, 87%, 61%);
 // font variables
 $font-family-primary: monospace;
 $font-family-secondary: serif;
-$font-size-h2: 2rem;
-$font-size-score: 1.2rem;
-$font-size-info: 1.5rem;
+$font-size-h2: 1.4rem;
+$font-size-score: 1rem;
+$font-size-info: .85rem;
 
 //size, margin & padding variables
 $min-height: 100vh;
 $padding-main: 2em;
 $padding-form: 1em;
 $padding-input: .75em;
+$padding-span: .2em;
+$padding-movieContainer: .5em;
 
 
 // transitions variables
@@ -46,7 +48,7 @@ $transition-info: .3s ease-in;
   
 }
 
-
+// STYLES SECTION
 /* general styles */
 
 *,
@@ -67,20 +69,79 @@ main {
   justify-content: space-evenly;
   padding: $padding-main;
 
+  h2 {
+    font-size: $font-size-h2;
+    text-transform: capitalize;
+  }
+
   .movie__card {
     @extend %share-flex;
     flex-flow: column;
+    justify-content: flex-start;
     @include theme($theme: $color-primary-oceanBlue);
 
     height: 300px;
     width: 200px;
     margin-top: 2em;
-  }
+    position: relative;
+    overflow: hidden;
+    font-size: $font-size-info;
+    transition: $transition-info;
+
+    // .movie__info {
+      //   display: none;
+      // }
+    .movie__info {
+      padding: .5em;;
+      position: absolute;
+      bottom: -100%;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: $color-primary-pastelBlue;
+      z-index: 5;
+      transition: $transition-info;
+      }
+
+    // .movie__info {
+    //   display
+    // }
+
+    .movie__container {
+      width: 100%;
+      @extend %share-flex;
+      justify-content: space-between;
+      padding: $padding-movieContainer;
+    }
 
   /* select all movie cards and apply margin except the last child in the group of siblings. */
   // .movie__card + .movie__card:not(:last-child) {
   //   margin-left: 1em;
   // }
+  }
+
+  .movie__card:hover .movie__info {
+    bottom: 0;
+    transition: $transition-info;
+  }
+
+}
+
+
+
+
+
+span {
+  @include theme($theme: $color-primary-purpleBlue, $color: $color-primary-highScore);
+  padding: $padding-span;
+  margin-top: .3em;
+  font-size: $font-size-score;
+}
+
+img {
+  background-color: white;
+  width: 200px;
+  height: 240px;
 }
 
 nav {

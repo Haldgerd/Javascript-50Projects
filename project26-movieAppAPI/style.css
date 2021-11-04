@@ -1,4 +1,4 @@
-main .movie__card, main {
+main .movie__card .movie__container, main .movie__card, main {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -22,15 +22,58 @@ main {
   flex-wrap: wrap;
   justify-content: space-evenly;
   padding: 2em;
-  /* select all movie cards and apply margin except the last child in the group of siblings. */
+}
+main h2 {
+  font-size: 1.4rem;
+  text-transform: capitalize;
 }
 main .movie__card {
   flex-flow: column;
+  justify-content: flex-start;
   background-color: #3897f0;
   color: white;
   height: 300px;
   width: 200px;
   margin-top: 2em;
+  position: relative;
+  overflow: hidden;
+  font-size: 0.85rem;
+  transition: 0.3s ease-in;
+  /* select all movie cards and apply margin except the last child in the group of siblings. */
+}
+main .movie__card .movie__info {
+  padding: 0.5em;
+  position: absolute;
+  bottom: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #37a9e6;
+  z-index: 5;
+  transition: 0.3s ease-in;
+}
+main .movie__card .movie__container {
+  width: 100%;
+  justify-content: space-between;
+  padding: 0.5em;
+}
+main .movie__card:hover .movie__info {
+  bottom: 0;
+  transition: 0.3s ease-in;
+}
+
+span {
+  background-color: #374ce6;
+  color: #60eb81;
+  padding: 0.2em;
+  margin-top: 0.3em;
+  font-size: 1rem;
+}
+
+img {
+  background-color: white;
+  width: 200px;
+  height: 240px;
 }
 
 nav {
