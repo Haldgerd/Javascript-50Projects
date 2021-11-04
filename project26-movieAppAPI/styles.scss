@@ -1,0 +1,105 @@
+//VARIABLES
+
+//colors
+$color-primary-candyBlue: hsl(225, 85%, 60%);
+$color-primary-purpleBlue: hsl(233, 78%, 56%);
+$color-primary-skyBlue: hsl(217, 67%, 55%);
+$color-primary-oceanBlue: hsl(209, 86%, 58%);
+$color-primary-pastelBlue: hsl(201, 78%, 56%);
+$color-primary-torquiseBlue: hsl(172, 86%, 58%);
+$color-primary-pureWhite: hsl(0, 0%, 100%);
+$color-primary-lowScore: hsl(339, 78%, 59%);
+$color-primary-highScore: hsl(134, 78%, 65%);
+$color-primary-averageScore: hsl(23, 87%, 61%);
+
+
+// font variables
+$font-family-primary: monospace;
+$font-family-secondary: serif;
+$font-size-h2: 2rem;
+$font-size-score: 1.2rem;
+$font-size-info: 1.5rem;
+
+//size, margin & padding variables
+$min-height: 100vh;
+$padding-main: 2em;
+$padding-form: 1em;
+$padding-input: .75em;
+
+
+// transitions variables
+$transition-info: .3s ease-in;
+
+
+//mixins
+@mixin theme($theme: $color-primary-purpleBlue, $color: $color-primary-pureWhite) {
+  background-color: $theme;
+  color: $color;
+}
+
+
+//extends section
+%share-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+
+/* general styles */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  @include theme($theme: $color-primary-candyBlue, $color: $color-primary-pureWhite);
+}
+
+main {
+  @extend %share-flex;
+  flex-wrap: wrap;
+  padding: $padding-main;
+
+  .movie__card {
+    @extend %share-flex;
+    flex-flow: column;
+    @include theme($theme: $color-primary-oceanBlue);
+
+    height: 300px;
+    width: 200px;
+    margin-top: 1em;
+    margin-left: 1em;
+  }
+
+  /* select all movie cards and apply margin except the last child in the group of siblings. */
+  // .movie__card + .movie__card:not(:last-child) {
+  //   margin-left: 1em;
+  // }
+}
+
+nav {
+  @include theme;
+  text-align: right;
+
+  form{
+    padding: $padding-form;
+  }
+
+  input {
+    padding: $padding-input;
+    border-radius: 20px; 
+    border: none;
+  }
+
+  input:focus {
+    outline: none;
+    outline: 3px solid $color-primary-oceanBlue;
+  }
+
+}

@@ -1,0 +1,54 @@
+main .movie__card, main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* general styles */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #426ef0;
+  color: white;
+}
+
+main {
+  flex-wrap: wrap;
+  padding: 2em;
+  /* select all movie cards and apply margin except the last child in the group of siblings. */
+}
+main .movie__card {
+  flex-flow: column;
+  background-color: #3897f0;
+  color: white;
+  height: 300px;
+  width: 200px;
+  margin-top: 1em;
+  margin-left: 1em;
+}
+
+nav {
+  background-color: #374ce6;
+  color: white;
+  text-align: right;
+}
+nav form {
+  padding: 1em;
+}
+nav input {
+  padding: 0.75em;
+  border-radius: 20px;
+  border: none;
+}
+nav input:focus {
+  outline: none;
+  outline: 3px solid #3897f0;
+}
+
+/*# sourceMappingURL=style.css.map */
