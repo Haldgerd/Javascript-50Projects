@@ -1,4 +1,4 @@
-main .movie__card .movie__container, main .movie__card, main {
+nav, main .movie__card .movie__container, main .movie__card, main {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -14,7 +14,7 @@ main .movie__card .movie__container, main .movie__card, main {
 }
 
 body {
-  background-color: #426ef0;
+  background-color: #f22133;
   color: white;
 }
 
@@ -25,12 +25,13 @@ main {
 }
 main h2 {
   font-size: 1.4rem;
+  color: #012825;
   text-transform: capitalize;
 }
 main .movie__card {
   flex-flow: column;
   justify-content: flex-start;
-  background-color: #3897f0;
+  background-color: #d9d9d9;
   color: white;
   height: 300px;
   width: 200px;
@@ -42,13 +43,13 @@ main .movie__card {
   /* select all movie cards and apply margin except the last child in the group of siblings. */
 }
 main .movie__card .movie__info {
-  padding: 0.5em;
+  padding: 0.75em;
   position: absolute;
   bottom: -100%;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #37a9e6;
+  background-color: #751f26;
   z-index: 5;
   transition: 0.3s ease-in;
 }
@@ -57,27 +58,27 @@ main .movie__card .movie__container {
   justify-content: space-between;
   padding: 0.5em;
 }
+main .movie__card .movie__image {
+  background-color: white;
+  width: 200px;
+  height: 240px;
+}
 main .movie__card:hover .movie__info {
   bottom: 0;
   transition: 0.3s ease-in;
 }
 
 span {
-  background-color: #374ce6;
-  color: #60eb81;
+  background-color: #012825;
+  color: white;
   padding: 0.2em;
   margin-top: 0.3em;
   font-size: 1rem;
 }
 
-img {
-  background-color: white;
-  width: 200px;
-  height: 240px;
-}
-
 nav {
-  background-color: #374ce6;
+  justify-content: space-between;
+  background-color: #012825;
   color: white;
   text-align: right;
 }
@@ -91,7 +92,7 @@ nav input {
 }
 nav input:focus {
   outline: none;
-  outline: 3px solid #3897f0;
+  outline: 3px solid #f00518;
 }
 
 /*# sourceMappingURL=style.css.map */

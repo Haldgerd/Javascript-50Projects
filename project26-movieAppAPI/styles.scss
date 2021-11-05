@@ -1,12 +1,11 @@
 //VARIABLES
 
 //colors
-$color-primary-candyBlue: hsl(225, 85%, 60%);
-$color-primary-purpleBlue: hsl(233, 78%, 56%);
-$color-primary-skyBlue: hsl(217, 67%, 55%);
-$color-primary-oceanBlue: hsl(209, 86%, 58%);
-$color-primary-pastelBlue: hsl(201, 78%, 56%);
-$color-primary-torquiseBlue: hsl(172, 86%, 58%);
+$color-primary-netflixWhite: hsl(0, 0%, 85%);
+$color-primary-netflixBlack: hsl(175, 95%, 8%);
+$color-primary-netflixPureRed: hsl(355, 96%, 48%);
+$color-primary-netflixBlood: hsl(355, 89%, 54%);
+$color-primary-netfilxDarkRed: hsl(355, 58%, 29%);
 $color-primary-pureWhite: hsl(0, 0%, 100%);
 $color-primary-lowScore: hsl(339, 78%, 59%);
 $color-primary-highScore: hsl(134, 78%, 65%);
@@ -34,7 +33,7 @@ $transition-info: .3s ease-in;
 
 
 //mixins
-@mixin theme($theme: $color-primary-purpleBlue, $color: $color-primary-pureWhite) {
+@mixin theme($theme: $color-primary-netflixBlack, $color: $color-primary-pureWhite) {
   background-color: $theme;
   color: $color;
 }
@@ -60,7 +59,7 @@ $transition-info: .3s ease-in;
 }
 
 body {
-  @include theme($theme: $color-primary-candyBlue, $color: $color-primary-pureWhite);
+  @include theme($theme: $color-primary-netflixBlood, $color: $color-primary-pureWhite);
 }
 
 main {
@@ -71,6 +70,7 @@ main {
 
   h2 {
     font-size: $font-size-h2;
+    color: $color-primary-netflixBlack;
     text-transform: capitalize;
   }
 
@@ -78,7 +78,7 @@ main {
     @extend %share-flex;
     flex-flow: column;
     justify-content: flex-start;
-    @include theme($theme: $color-primary-oceanBlue);
+    @include theme($theme: $color-primary-netflixWhite);
 
     height: 300px;
     width: 200px;
@@ -88,15 +88,15 @@ main {
     font-size: $font-size-info;
     transition: $transition-info;
 
-    
+
     .movie__info {
-      padding: .5em;;
+      padding: .75em;;
       position: absolute;
       bottom: -100%;
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: $color-primary-pastelBlue;
+      background-color: $color-primary-netfilxDarkRed;
       z-index: 5;
       transition: $transition-info;
       }
@@ -109,6 +109,11 @@ main {
       padding: $padding-movieContainer;
     }
 
+    .movie__image {
+      background-color: white;
+      width: 200px;
+      height: 240px;
+    }
   /* select all movie cards and apply margin except the last child in the group of siblings. */
   // .movie__card + .movie__card:not(:last-child) {
   //   margin-left: 1em;
@@ -124,19 +129,16 @@ main {
 
 
 span {
-  @include theme($theme: $color-primary-purpleBlue, $color: $color-primary-highScore);
+  @include theme($theme: $color-primary-netflixBlack, $color: $color-primary-pureWhite);
   padding: $padding-span;
   margin-top: .3em;
   font-size: $font-size-score;
 }
 
-img {
-  background-color: white;
-  width: 200px;
-  height: 240px;
-}
 
 nav {
+  @extend %share-flex;
+  justify-content: space-between;
   @include theme;
   text-align: right;
 
@@ -152,7 +154,7 @@ nav {
 
   input:focus {
     outline: none;
-    outline: 3px solid $color-primary-oceanBlue;
+    outline: 3px solid $color-primary-netflixPureRed;
   }
 
 }
