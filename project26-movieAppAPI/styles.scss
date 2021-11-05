@@ -80,7 +80,7 @@ main {
     justify-content: flex-start;
     @include theme($theme: $color-primary-netflixWhite);
 
-    height: 300px;
+    height: 350px;
     width: 200px;
     margin-top: 2em;
     position: relative;
@@ -99,6 +99,7 @@ main {
       background-color: $color-primary-netfilxDarkRed;
       z-index: 5;
       transition: $transition-info;
+      overflow-y: auto;
       }
 
 
@@ -111,8 +112,8 @@ main {
 
     .movie__image {
       background-color: white;
-      width: 200px;
-      height: 240px;
+      // width: 200px;
+      // height: 240px;
     }
   /* select all movie cards and apply margin except the last child in the group of siblings. */
   // .movie__card + .movie__card:not(:last-child) {
@@ -142,14 +143,20 @@ nav {
   @include theme;
   text-align: right;
 
+  .logo {
+    width: clamp(100px, 20vw, 400px);
+  }
+
   form{
     padding: $padding-form;
+    width: 100%;
   }
 
   input {
     padding: $padding-input;
     border-radius: 20px; 
     border: none;
+    width: 40%;
   }
 
   input:focus {

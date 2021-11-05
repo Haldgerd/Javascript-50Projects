@@ -33,7 +33,7 @@ main .movie__card {
   justify-content: flex-start;
   background-color: #d9d9d9;
   color: white;
-  height: 300px;
+  height: 350px;
   width: 200px;
   margin-top: 2em;
   position: relative;
@@ -52,6 +52,7 @@ main .movie__card .movie__info {
   background-color: #751f26;
   z-index: 5;
   transition: 0.3s ease-in;
+  overflow-y: auto;
 }
 main .movie__card .movie__container {
   width: 100%;
@@ -60,8 +61,6 @@ main .movie__card .movie__container {
 }
 main .movie__card .movie__image {
   background-color: white;
-  width: 200px;
-  height: 240px;
 }
 main .movie__card:hover .movie__info {
   bottom: 0;
@@ -82,13 +81,18 @@ nav {
   color: white;
   text-align: right;
 }
+nav .logo {
+  width: clamp(100px, 20vw, 400px);
+}
 nav form {
   padding: 1em;
+  width: 100%;
 }
 nav input {
   padding: 0.75em;
   border-radius: 20px;
   border: none;
+  width: 40%;
 }
 nav input:focus {
   outline: none;

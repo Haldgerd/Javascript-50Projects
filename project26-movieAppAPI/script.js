@@ -23,6 +23,8 @@ async function getNetflixSeries(url) {
     const response = await fetch(url);
     const data = await response.json();
 
+    console.log(data);
+
     const series = data.results;
       console.log(series);
 
@@ -55,7 +57,7 @@ const displayData = (data) => {
         const score = series.vote_average;
 
         container.innerHTML = `
-        <img src="" alt="image" srcset="" class="movie__image"/>
+        <img src="https://image.tmdb.org/t/p/w200${series.poster_path}" alt="image" srcset="" class="movie__image"/>
         <div class="movie__container">
           <h2 class="movie__title">${title}</h2>
           <span class="movie__score">${score}</span>
