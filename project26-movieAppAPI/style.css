@@ -24,7 +24,7 @@ main {
   padding: 2em;
 }
 main h2 {
-  font-size: 1.4rem;
+  font-size: 1rem;
   color: #012825;
   text-transform: capitalize;
 }
@@ -38,7 +38,7 @@ main .movie__card {
   margin-top: 2em;
   position: relative;
   overflow: hidden;
-  font-size: 0.85rem;
+  font-size: 0.95rem;
   transition: 0.3s ease-in;
   /* select all movie cards and apply margin except the last child in the group of siblings. */
 }
@@ -73,7 +73,7 @@ span {
   color: white;
   padding: 0.2em;
   margin-top: 0.3em;
-  font-size: 1rem;
+  font-size: 0.75rem;
 }
 
 nav {
