@@ -24,13 +24,20 @@ getNetflixSeries(APIurl);
 window.addEventListener("submit", (e) => {
     e.preventDefault();
     // console.log(e.currentTarget);
-    console.log(input.value); // show value placed in input
-    alert("Submited!");
+
+    const input = input.value;
+
+    //function that accepts value and checks through titles to display only series containing the input string.
+
 });
 
 
-
 //functions
+/**
+ * Returns a promise. Fetches data from selected URL address.
+ *
+ * @param {string} url URL address 
+ */
 async function getNetflixSeries(url) {
     // returns a promise!
 
@@ -44,6 +51,11 @@ async function getNetflixSeries(url) {
 }
 
 
+/**
+ * Displays TV series cards with additional information.
+ *
+ * @param {Array} data Array of series.
+ */
 const displayFullData = (data) => {
     data.forEach(series => {
         
@@ -74,23 +86,23 @@ const displayFullData = (data) => {
 
 // // check for score and change it's color depending on it.
 // const displayScore = (score) => {
+/**
+ * Changes score color depending on score.
+ 
+ */
 const displayScoreColor = () => {
 
     const scores = document.querySelectorAll(".movie__score");
-    console.log(scores);
 
     scores.forEach(score => {
         const avgScore = score.innerHTML;
-      
-        console.log(avgScore);
-
+    
         if (avgScore >= 8) {
             score.style.color = "hsl(355, 90%, 61%)";
         } else if (avgScore >= 7) {
             score.style.color = "hsl(0, 0%, 85%);";
         } else {
             score.style.color = "hsl(22, 97%, 66%)";
-        }
-            
+        }      
     });
 }
