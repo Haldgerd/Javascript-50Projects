@@ -7,9 +7,6 @@ $color-primary-netflixPureRed: hsl(355, 96%, 48%);
 $color-primary-netflixBlood: hsl(355, 89%, 54%);
 $color-primary-netfilxDarkRed: hsl(355, 58%, 29%);
 $color-primary-pureWhite: hsl(0, 0%, 100%);
-$color-primary-lowScore: hsl(339, 78%, 59%);
-$color-primary-highScore: hsl(134, 78%, 65%);
-$color-primary-averageScore: hsl(23, 87%, 61%);
 
 
 // font variables
@@ -144,7 +141,7 @@ nav {
   text-align: right;
 
   .logo {
-    width: clamp(100px, 20vw, 400px);
+    width: clamp(150px, 20vw, 400px);
   }
 
   form{
@@ -156,7 +153,7 @@ nav {
     padding: $padding-input;
     border-radius: 20px; 
     border: none;
-    width: 40%;
+    width: min(75%, 300px);
   }
 
   input:focus {

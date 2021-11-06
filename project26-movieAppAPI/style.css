@@ -82,7 +82,7 @@ nav {
   text-align: right;
 }
 nav .logo {
-  width: clamp(100px, 20vw, 400px);
+  width: clamp(150px, 20vw, 400px);
 }
 nav form {
   padding: 1em;
@@ -92,7 +92,7 @@ nav input {
   padding: 0.75em;
   border-radius: 20px;
   border: none;
-  width: 40%;
+  width: min(75%, 300px);
 }
 nav input:focus {
   outline: none;

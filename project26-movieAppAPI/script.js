@@ -17,22 +17,6 @@ const APIurl = "https://api.themoviedb.org/3/discover/tv?sort_by=popularity.desc
 
 
 
-async function getNetflixSeries(url) {
-    // returns a promise!
-
-    const response = await fetch(url);
-    const data = await response.json();
-
-    console.log(data);
-
-    const series = data.results;
-      console.log(series);
-
-     // function that takes in data and display it
-     displayData(series);
-}
-
-
 // call async function
 getNetflixSeries(APIurl);
 
@@ -41,12 +25,26 @@ window.addEventListener("submit", (e) => {
     e.preventDefault();
     // console.log(e.currentTarget);
     console.log(input.value); // show value placed in input
-    console.log("Submited!");
+    alert("Submited!");
 });
 
 
+
 //functions
-const displayData = (data) => {
+async function getNetflixSeries(url) {
+    // returns a promise!
+
+    const response = await fetch(url);
+    const data = await response.json();
+
+    const series = data.results;
+
+     // function that takes in data and display it
+     displayFullData(series);
+}
+
+
+const displayFullData = (data) => {
     data.forEach(series => {
         
         const container = document.createElement("div");
@@ -56,6 +54,7 @@ const displayData = (data) => {
         const overview = series.overview;
         const score = series.vote_average;
 
+
         container.innerHTML = `
         <img src="https://image.tmdb.org/t/p/w200${series.poster_path}" alt="image" srcset="" class="movie__image"/>
         <div class="movie__container">
@@ -64,8 +63,34 @@ const displayData = (data) => {
         </div>
         <div class="movie__info">${overview}</div>
         `
-        
+
         main.append(container);
+
     });
+
+    displayScoreColor();
 }
 
+
+// // check for score and change it's color depending on it.
+// const displayScore = (score) => {
+const displayScoreColor = () => {
+
+    const scores = document.querySelectorAll(".movie__score");
+    console.log(scores);
+
+    scores.forEach(score => {
+        const avgScore = score.innerHTML;
+      
+        console.log(avgScore);
+
+        if (avgScore >= 8) {
+            score.style.color = "hsl(355, 90%, 61%)";
+        } else if (avgScore >= 7) {
+            score.style.color = "hsl(0, 0%, 85%);";
+        } else {
+            score.style.color = "hsl(22, 97%, 66%)";
+        }
+            
+    });
+}
