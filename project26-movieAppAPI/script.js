@@ -24,18 +24,25 @@ window.addEventListener("submit", (e) => {
     e.preventDefault();
     // console.log(e.currentTarget);
 
+    // main.innerHTML = "";
+
     const searchValue = searchInput.value.toLowerCase();
+    console.log(searchValue);
 
     if (searchValue) {
 
         const seriesNames = document.querySelectorAll(".movie__title");
     
         seriesNames.forEach(name => {
+        
+            const originalTitle = name.innerHTML.toLowerCase();
 
-        const originalTitle = name.innerHTML.toLowerCase();
+            //hide all series except those whose title inludes input string.
+            name.parentElement.parentElement.style.display = "none";
 
-            if (!originalTitle.includes(searchValue)){
-                name.parentElement.parentElement.style.display = "none";
+            if (originalTitle.includes(searchValue)){
+                console.log("i'm here.");
+                name.parentElement.parentElement.style.display = "block";
             } // ERROR doubling of search items: FIXED.
 
         });
