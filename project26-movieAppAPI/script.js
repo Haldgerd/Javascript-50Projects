@@ -3,7 +3,7 @@ const form = document.querySelector(".search__form");
 
 const main = document.querySelector("main");
 
-const input = document.querySelector(".search__input");
+const searchInput = document.querySelector(".search__input");
 
 const logo = document.querySelector(".logo");
 
@@ -16,7 +16,6 @@ const APIurl = "https://api.themoviedb.org/3/discover/tv?sort_by=popularity.desc
 // https://api.themoviedb.org/3/discover/tv?sort_by=popularity&with_network=213&api_key=ad3ffbd0b196e926f7cccabfd2460f2a
 
 
-
 // call async function
 getNetflixSeries(APIurl);
 
@@ -25,10 +24,27 @@ window.addEventListener("submit", (e) => {
     e.preventDefault();
     // console.log(e.currentTarget);
 
-    const input = input.value;
+    const searchValue = searchInput.value.toLowerCase();
 
-    //function that accepts value and checks through titles to display only series containing the input string.
+    if (searchValue) {
 
+        const seriesNames = document.querySelectorAll(".movie__title");
+    
+        seriesNames.forEach(name => {
+
+        const originalTitle = name.innerHTML.toLowerCase();
+
+            if (!originalTitle.includes(searchValue)){
+                name.parentElement.parentElement.style.display = "none";
+            } // ERROR doubling of search items: FIXED.
+
+        });
+
+    } else {
+        main.innerHTML = "";
+        getNetflixSeries(APIurl);
+    }
+    
 });
 
 
@@ -46,9 +62,11 @@ async function getNetflixSeries(url) {
 
     const series = data.results;
 
-     // function that takes in data and display it
-     displayFullData(series);
+     // function that takes in data and displays it.
+    displayFullData(series);
+     
 }
+
 
 
 /**
@@ -56,28 +74,27 @@ async function getNetflixSeries(url) {
  *
  * @param {Array} data Array of series.
  */
-const displayFullData = (data) => {
+const displayFullData = (data, input) => {
     data.forEach(series => {
-        
-        const container = document.createElement("div");
-        container.className = "movie__card";
 
         const title = series.name;
         const overview = series.overview;
         const score = series.vote_average;
+        
 
+        const container = document.createElement("div");
+        container.className = "movie__card";
 
         container.innerHTML = `
         <img src="https://image.tmdb.org/t/p/w200${series.poster_path}" alt="image" srcset="" class="movie__image"/>
         <div class="movie__container">
-          <h2 class="movie__title">${title}</h2>
-          <span class="movie__score">${score}</span>
+            <h2 class="movie__title">${title}</h2>
+            <span class="movie__score">${score}</span>
         </div>
-        <div class="movie__info">${overview}</div>
-        `
-
+        <div class="movie__info">${overview}</div>`
+            
         main.append(container);
-
+        
     });
 
     displayScoreColor();

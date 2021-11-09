@@ -82,7 +82,7 @@ nav {
   text-align: right;
 }
 nav .logo {
-  width: clamp(150px, 20vw, 400px);
+  width: clamp(170px, 20vw, 400px);
 }
 nav form {
   padding: 1em;
