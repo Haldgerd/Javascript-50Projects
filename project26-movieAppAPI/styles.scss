@@ -62,7 +62,7 @@ body {
 main {
   @extend %share-flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: flex-start;
   padding: $padding-main;
 
   h2 {
@@ -79,7 +79,8 @@ main {
 
     height: 350px;
     width: 200px;
-    margin-top: 2em;
+    margin-top: 2.85em;
+    margin-left: 2.85em;
     position: relative;
     overflow: hidden;
     font-size: $font-size-info;
