@@ -12,12 +12,12 @@ const searchInput = document.querySelector(".search__input");
 const logo = document.querySelector(".logo");
 
 // netflix series by popularity
-const APIurl = "https://api.themoviedb.org/3/discover/tv?sort_by=popularity.desc&with_networks=213&api_key=ad3ffbd0b196e926f7cccabfd2460f2a";
+const APIurl = `https://api.themoviedb.org/3/discover/tv?sort_by=popularity.desc&with_networks=213&api_key=${apiKey}`;
 
-// https://api.themoviedb.org/3/network/213?api_key=ad3ffbd0b196e926f7cccabfd2460f2a for netflix company information
+// https://api.themoviedb.org/3/network/213?api_key="" for netflix company information
 
 //netflix series by popularity - not netflix but all series by popularity.
-// https://api.themoviedb.org/3/discover/tv?sort_by=popularity&with_network=213&api_key=ad3ffbd0b196e926f7cccabfd2460f2a
+// https://api.themoviedb.org/3/discover/tv?sort_by=popularity&with_network=213&api_key=""
 
 
 // call async function
