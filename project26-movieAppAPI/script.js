@@ -1,3 +1,7 @@
+// NOTE TO SELF: Working with API's see if there's an option to search through database using API search query.
+// In my option this solution is better in compare to one I implemented where I search only through aquired series, but not all series.
+
+
 //variables
 const form = document.querySelector(".search__form");
 
@@ -21,7 +25,7 @@ getNetflixSeries(APIurl);
 
 
 window.addEventListener("submit", (e) => {
-    e.preventDefault();
+    e.preventDefault(); // prevent from submitting to page
     // console.log(e.currentTarget);
 
     // main.innerHTML = "";
@@ -31,6 +35,8 @@ window.addEventListener("submit", (e) => {
 
     if (searchValue) {
 
+        // NOTE: could look by API search query, adding only input value as query value.
+        // create search_API and then add query.
         const seriesNames = document.querySelectorAll(".movie__title");
     
         seriesNames.forEach(name => {
@@ -48,8 +54,8 @@ window.addEventListener("submit", (e) => {
         });
 
     } else {
-        main.innerHTML = "";
-        getNetflixSeries(APIurl);
+        // reload page
+        window.location.reload();
     }
     
 });
